@@ -10,25 +10,13 @@ import io.github.janguenter.bluemap.immersiveengineering.model.MetalPressInstall
 public final class MetalPressDummyBlockEntityData extends MCABlockEntity {
 
     @NBTName("posInMB")
-    private Position position;
+    private int[] position;
 
     public MetalPressDummyBlockEntityData() {
     }
 
     PartPosition position() {
-        return position == null ? null : new PartPosition(position.x, position.y, position.z);
-    }
-
-    /** Minecraft's compound BlockPos codec uses uppercase coordinate keys. */
-    public static final class Position {
-        @NBTName("X")
-        private int x;
-        @NBTName("Y")
-        private int y;
-        @NBTName("Z")
-        private int z;
-
-        public Position() {
-        }
+        return position == null || position.length != 3
+                ? null : new PartPosition(position[0], position[1], position[2]);
     }
 }

@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class MetalPressBlockEntityDataTest {
 
     @Test
-    void decodesExactCompoundPositionAndKeepsMasterDistinct() throws IOException {
+    void decodesExactIntArrayPositionAndKeepsMasterDistinct() throws IOException {
         MetalPressDummyBlockEntityData dummy = readDummy(0, 1, 0);
         MetalPressMasterBlockEntityData master = readMaster();
 
@@ -31,11 +31,7 @@ class MetalPressBlockEntityDataTest {
         try (NBTWriter writer = new NBTWriter(bytes)) {
             writer.beginCompound();
             common(writer, "immersiveengineering:metal_press_dummy");
-            writer.name("posInMB").beginCompound();
-            writer.name("X").value(x);
-            writer.name("Y").value(y);
-            writer.name("Z").value(z);
-            writer.endCompound();
+            writer.name("posInMB").value(new int[]{x, y, z});
             writer.endCompound();
         }
         return read(bytes, MetalPressDummyBlockEntityData.class);
