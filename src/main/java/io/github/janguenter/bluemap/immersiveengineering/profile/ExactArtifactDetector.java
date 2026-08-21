@@ -20,6 +20,7 @@ import java.util.HexFormat;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
@@ -41,6 +42,11 @@ public final class ExactArtifactDetector {
 
     /** Returns true only when every pin has one distinct declaring exact JAR. */
     public static boolean matchesAll(Iterable<Path> roots, List<ArtifactPin> pins) {
+        return findAll(roots, pins).isPresent();
+    }
+
+    /** Returns exact JARs in pin order after the same unambiguous admission gate. */
+    public static Optional<List<Path>> findAll(Iterable<Path> roots, List<ArtifactPin> pins) {
         Objects.requireNonNull(roots, "roots");
         Objects.requireNonNull(pins, "pins");
         if (pins.isEmpty() || new HashSet<>(pins).size() != pins.size()) {
@@ -48,16 +54,18 @@ public final class ExactArtifactDetector {
         }
         List<Path> bounded = boundedRoots(roots);
         if (bounded == null) {
-            return false;
+            return Optional.empty();
         }
         Set<Path> selected = new HashSet<>();
+        List<Path> matches = new ArrayList<>();
         for (ArtifactPin pin : pins) {
             Path match = findOne(bounded, pin);
             if (match == null || !selected.add(match)) {
-                return false;
+                return Optional.empty();
             }
+            matches.add(match);
         }
-        return true;
+        return Optional.of(List.copyOf(matches));
     }
 
     private static List<Path> boundedRoots(Iterable<Path> roots) {

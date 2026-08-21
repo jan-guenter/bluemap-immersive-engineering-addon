@@ -4,6 +4,7 @@
 
 package io.github.janguenter.bluemap.immersiveengineering.profile;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -32,6 +33,10 @@ class ExactArtifactDetectorTest {
         ArtifactPin pin = pin(jar, "targetmod");
 
         assertTrue(ExactArtifactDetector.matchesAll(List.of(jar), List.of(pin)));
+        assertEquals(
+                List.of(jar),
+                ExactArtifactDetector.findAll(List.of(jar), List.of(pin)).orElseThrow()
+        );
     }
 
     @Test
@@ -49,6 +54,9 @@ class ExactArtifactDetectorTest {
         ));
         assertFalse(ExactArtifactDetector.matchesAll(List.of(wrongMod), List.of(pin)));
         assertFalse(ExactArtifactDetector.matchesAll(List.of(wrongBytes), List.of(pin)));
+        assertTrue(ExactArtifactDetector.findAll(
+                List.of(first, duplicate), List.of(pin)
+        ).isEmpty());
     }
 
     private Path createJar(String name, String modId, String payload) throws IOException {
