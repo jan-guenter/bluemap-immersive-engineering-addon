@@ -1,0 +1,379 @@
+{
+  "deterministic": true,
+  "family_id": "immersiveengineering",
+  "generator": "bluemap-java21-addon-scaffold-v1",
+  "initial_files": [
+    {
+      "mode": "0644",
+      "path": ".gitattributes",
+      "sha256": "c0b5802900ed076871e7878f051eb2cd8d7918dbfada3f40f86300fa7325252d",
+      "size": 58
+    },
+    {
+      "mode": "0644",
+      "path": ".github/workflows/ci.yml",
+      "sha256": "9ba6b210bbbaa59ea52adab13a482192e37ae61701d72b08e285713e47c47d52",
+      "size": 4486
+    },
+    {
+      "mode": "0644",
+      "path": ".github/workflows/release.yml",
+      "sha256": "41f646004952929ba170b41744341f700b521e097a778c62c08bd3961f6c3f71",
+      "size": 6655
+    },
+    {
+      "mode": "0644",
+      "path": ".gitignore",
+      "sha256": "a5030053f21da04c319ab8abe4020d2ee1d488430e79f0b8ce04f1d7f29a93f6",
+      "size": 105
+    },
+    {
+      "mode": "0644",
+      "path": "AGENTS.md",
+      "sha256": "746653b9ba46df1085293d35878d34cfa150be7706753bd9b4416be19a124218",
+      "size": 2146
+    },
+    {
+      "mode": "0644",
+      "path": "CHANGELOG.md",
+      "sha256": "d9961e48f618058d5fde552fb954541445d21f6aa5e70e130cfe036a8733e9b0",
+      "size": 213
+    },
+    {
+      "mode": "0644",
+      "path": "LICENSE",
+      "sha256": "f079a10f7ddfae72170c16c8be18685f05e36309955c3858e9f863d4cae7cfce",
+      "size": 1068
+    },
+    {
+      "mode": "0644",
+      "path": "LICENSE-BlueMap",
+      "sha256": "f1c190d4a1ff29606cbed7a0d97fc7b7117cc2e1169e19caa753198957dbbfd6",
+      "size": 1122
+    },
+    {
+      "mode": "0644",
+      "path": "NOTICE.md",
+      "sha256": "493f9041ce644767fe3e3e0c560bac9086ebc529717e1cb5332671733dc7b8da",
+      "size": 436
+    },
+    {
+      "mode": "0644",
+      "path": "README.md",
+      "sha256": "10811463a8f156da5006c02c98a540dc8236e6e7ef044d08084460004a7617e5",
+      "size": 1578
+    },
+    {
+      "mode": "0644",
+      "path": "THIRD_PARTY.md",
+      "sha256": "d762d62db543921669943b0157755e7f35fe5f857197698708a41051e3379abc",
+      "size": 631
+    },
+    {
+      "mode": "0644",
+      "path": "build.gradle",
+      "sha256": "c752440beb862e240952166a298e6dcab16407f42d7a49e48c57dd95b0b422d9",
+      "size": 19796
+    },
+    {
+      "mode": "0644",
+      "path": "config/checkstyle/checkstyle.xml",
+      "sha256": "77fe7b6d9a70f527daf7288ad2955e467f1059ef75b0c3d0d63694c8bea285d7",
+      "size": 791
+    },
+    {
+      "mode": "0644",
+      "path": "docs/EXECUTION.md",
+      "sha256": "9908805f0126e1598452b9e8ca649f8d671dabda111538f6157b74efb1bc507a",
+      "size": 2089
+    },
+    {
+      "mode": "0644",
+      "path": "docs/RELEASING.md",
+      "sha256": "7488e66595e35648c172f99f43104e5dc8bdc99569a106b25bb628ef7f4b4b5d",
+      "size": 1522
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/README.md",
+      "sha256": "b231b887f84042051e1c755c3550d9ff064f39a67db457ecd3fb8be589bd75d8",
+      "size": 684
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/SHA256SUMS",
+      "sha256": "77743738c1d39f036753c1d3386f3135a26b759a29ba10adf4b04e826cafb062",
+      "size": 959
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/cases.py",
+      "sha256": "c1a2edaf644faf8b956c3ed53c648a27543c8541c287e58054a77e79987475d2",
+      "size": 774
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/immersiveengineering_gallery/function/build.mcfunction",
+      "sha256": "eba82b3469fafd51afc4de5f33ed89879cdcfbb4c221912f85b35909a1e1990d",
+      "size": 222
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/immersiveengineering_gallery/function/clear.mcfunction",
+      "sha256": "4507683d949af7e2312781de5e2ef0cb5d090ff6584e08f003a406bb4586b5d3",
+      "size": 91
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/immersiveengineering_gallery/function/load.mcfunction",
+      "sha256": "5208cef1ee139c59de517e568f63492347b2a4b068ef52e0d3628d666e264535",
+      "size": 187
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/immersiveengineering_gallery/function/release.mcfunction",
+      "sha256": "c4ab310686e48ddf25343d958f8d299397a25928b1aba2c79a79edee5efc5761",
+      "size": 93
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/immersiveengineering_gallery/function/verify.mcfunction",
+      "sha256": "0e0f70467f09a5cc87a9a70257b0333871764e4840c853f968a05662408c0242",
+      "size": 259
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/minecraft/tags/function/load.json",
+      "sha256": "6ce01b2c24188f5bd5305c4ed580db31c6f7aa37d5ed7cdd2677662fd227e5e2",
+      "size": 62
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/pack.mcmeta",
+      "sha256": "bcf51c0587364ca5c1f894335dc47b49585055ed22a043179de85f9b12fb6d92",
+      "size": 116
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/generate.py",
+      "sha256": "33263f5427867ebfbd5821c708d5d3950aece02412fdfacffadd7d1387abc973",
+      "size": 4835
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/lint.py",
+      "sha256": "b970deb190d8597b0b0c07429be2898edd5bad6cef5c35e0f5b4bdfad7d58982",
+      "size": 2469
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/package.sh",
+      "sha256": "e3c4b368faadb6df50603db65fb0a251d3d05b00bb8ea97068482833caa54466",
+      "size": 1328
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/placements.tsv",
+      "sha256": "b56ee047c4aa36d26a7ca29b867a4bee61e3fa5aa25f0c4247ee46ca07cff797",
+      "size": 127
+    },
+    {
+      "mode": "0644",
+      "path": "gradle.properties",
+      "sha256": "48d17ef2472c640cf60a05f934693bdd98252b1a6ef0999e5b978b9430861d51",
+      "size": 627
+    },
+    {
+      "mode": "0644",
+      "path": "provenance/release.json",
+      "sha256": "bcac8d631bc7b135750b81604f3d5a72ebde672417f5786a0317640cbe85fae1",
+      "size": 377
+    },
+    {
+      "mode": "0644",
+      "path": "provenance/upstreams.json",
+      "sha256": "b90496eb7903f035ff93735cb17be1647dd94699e3420f99ac974e55a590953e",
+      "size": 1461
+    },
+    {
+      "mode": "0644",
+      "path": "settings.gradle",
+      "sha256": "b4085c3557414abbe57028f99d991eee3e00fa6c210044ada86668172321408c",
+      "size": 1440
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/BlueMapImmersiveEngineeringAddon.java",
+      "sha256": "a2a3a35728c0b83522de3d13b3f8be257113c78111281f216bf3feebd05a2284",
+      "size": 1617
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/activation/AddonRuntime.java",
+      "sha256": "44a9a0916aca6498b22cb9d8151463ad0601a99ba29a13e3006004401157ef9b",
+      "size": 2180
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/adapter/bluemap522/AdapterCompatibility.java",
+      "sha256": "00f71506b4b8a0484cce6ac6903920e32dfd96cbbe013c0789298db11206df7a",
+      "size": 1050
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/adapter/bluemap522/BlueMap522Adapter.java",
+      "sha256": "1ab3644f7a48ae3227187865209dca0fe960b84c9cddad6adb84c6208721773c",
+      "size": 1160
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/adapter/bluemap522/ProfileResourceExtension.java",
+      "sha256": "c51ccc3523e780d1ed167e7583c6cb01c2b3d5178c4e954fabbb96e4a259ddee",
+      "size": 1778
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/adapter/bluemap522/ProfileResourceExtensionType.java",
+      "sha256": "c8ac05b0df4d7ca49d7f013539282f5ffc8c8818fa0d838a123ccbf67e5759f4",
+      "size": 958
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/adapter/bluemap522/RegistryGuard.java",
+      "sha256": "caaa6585886e992f59cc63aabf9489676b2e87ae4018a77103e4be0fa099be15",
+      "size": 887
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/profile/ArtifactPin.java",
+      "sha256": "885d34883e0e0c402f2d52fcdd84bad2aa556a54678114a0fd5d6a038456d450",
+      "size": 1382
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/profile/ExactArtifactDetector.java",
+      "sha256": "f231e1fb225bb348424fa7245eaf2e44629f8b19431dbc7e8d9950d57aec12e5",
+      "size": 9973
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/immersiveengineering/profile/ImmersiveEngineering1242194Profile.java",
+      "sha256": "c3928098022931a27401942979f33dd4df59c4164032de4522e8f189016ce019",
+      "size": 824
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/resources/bluemap.addon.json",
+      "sha256": "257229e3f0cf6739f543c520fe5646f33ac6652cf3b06accbcc1bf67e8c0f27c",
+      "size": 195
+    },
+    {
+      "mode": "0644",
+      "path": "src/test/java/io/github/janguenter/bluemap/immersiveengineering/activation/AddonRuntimeTest.java",
+      "sha256": "c7f0719b9231115bc26deb6f6e5d1ea0f53571437ab7973a9e18fcdd0c497580",
+      "size": 1086
+    },
+    {
+      "mode": "0644",
+      "path": "src/test/java/io/github/janguenter/bluemap/immersiveengineering/adapter/bluemap522/AdapterCompatibilityTest.java",
+      "sha256": "eb1ba914c1285139fc442a36880c4680969dbcf0624b980b2ca7953832dc4c1c",
+      "size": 974
+    },
+    {
+      "mode": "0644",
+      "path": "src/test/java/io/github/janguenter/bluemap/immersiveengineering/profile/ExactArtifactDetectorTest.java",
+      "sha256": "dc2fb6e0cc233fa59b859269896efdcfec66469468966d59768ac6121f5bfb58",
+      "size": 3435
+    },
+    {
+      "mode": "0755",
+      "path": "tools/verify_pinned_artifacts.py",
+      "sha256": "dc7c6d80796f9d5773183a499aa61320a0126ac21f1fdb5c8e872bbf618ca798",
+      "size": 3508
+    },
+    {
+      "mode": "0755",
+      "path": "tools/verify_staged_equivalence.py",
+      "sha256": "cc8fa6cb1e79b85555b9f10920909b0c03fdc8d78445e07c877674e513fcff9f",
+      "size": 4441
+    }
+  ],
+  "repository": "bluemap-immersive-engineering-addon",
+  "schema": 1,
+  "spec_sha256": "e5ee17a599ffdedc66606e86db19bd9a990d132ac54999e0c2bf06b914af9f37",
+  "steps": [
+    {
+      "description": "Validate the reviewed scaffold spec.",
+      "id": "validate-spec",
+      "number": 1,
+      "status": "complete"
+    },
+    {
+      "description": "Render and byte-audit the deterministic seed.",
+      "id": "render-seed",
+      "number": 2,
+      "status": "complete"
+    },
+    {
+      "description": "Initialize the independent child repository and feature branch.",
+      "id": "initialize-repository",
+      "number": 3,
+      "status": "pending"
+    },
+    {
+      "description": "Acquire exact candidate artifacts outside Git and verify their identities.",
+      "id": "acquire-artifacts",
+      "number": 4,
+      "status": "pending"
+    },
+    {
+      "description": "Verify Java 21 and exact BlueMap, API, pack, and loader pins.",
+      "id": "verify-baseline",
+      "number": 5,
+      "status": "pending"
+    },
+    {
+      "description": "Implement family-owned registration, profile, decoder, and renderer.",
+      "id": "implement-family",
+      "number": 6,
+      "status": "pending"
+    },
+    {
+      "description": "Add focused compatibility, decoder, geometry, and fallback tests.",
+      "id": "focused-tests",
+      "number": 7,
+      "status": "pending"
+    },
+    {
+      "description": "Replace the stock-only gallery with the smallest defect fixture.",
+      "id": "defect-gallery",
+      "number": 8,
+      "status": "pending"
+    },
+    {
+      "description": "Build a prototype and deploy it promptly to disposable staging.",
+      "id": "stage-prototype",
+      "number": 9,
+      "status": "pending"
+    },
+    {
+      "description": "Obtain owner comparison and visual acceptance in client and BlueMap.",
+      "id": "owner-acceptance",
+      "number": 10,
+      "status": "pending"
+    },
+    {
+      "description": "Seal staging and publication identities and run the release gate.",
+      "id": "seal-release",
+      "number": 11,
+      "status": "pending"
+    },
+    {
+      "description": "Merge, tag, publish, verify, and update root coordination.",
+      "id": "publish-coordinate",
+      "number": 12,
+      "status": "pending"
+    }
+  ],
+  "template_sha256": "96f6497d2ea982ea702c0208ddf202393bb331b1b24f6600bd9a328ca62f4540"
+}
