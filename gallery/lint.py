@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Lint the generated placeholder gallery without starting Minecraft."""
+"""Lint the generated formed-structure gallery without starting Minecraft."""
 
 from __future__ import annotations
 
@@ -31,36 +31,65 @@ def main() -> int:
     )
     if load_tag != {"values": [f"{cases.NAMESPACE}:load"]}:
         raise ValueError("load tag differs from the exact namespace")
-    if len(cases.PLACEMENTS) != 1:
-        raise ValueError("placeholder must contain exactly one stock control")
 
-    placement = cases.PLACEMENTS[0]
-    if placement.block_state != "minecraft:stone" or placement.expected != (
-        "stock-visible"
-    ):
-        raise ValueError("placeholder must remain an honest stone stock control")
-    minimum_x, minimum_y, minimum_z, maximum_x, maximum_y, maximum_z = (
-        cases.ENVELOPE
-    )
-    if not (
-        minimum_x <= placement.x <= maximum_x
-        and minimum_y <= placement.y <= maximum_y
-        and minimum_z <= placement.z <= maximum_z
-    ):
-        raise ValueError("placeholder placement escaped its bounded envelope")
+    if tuple(page.number for page in cases.PAGES) != (2, 3, 4, 5):
+        raise ValueError("gallery must contain pages 2-5 in order")
+    case_ids = tuple(case.case_id for case in cases.PLACEMENTS)
+    if len(case_ids) != 47 or len(set(case_ids)) != len(case_ids):
+        raise ValueError("gallery must contain 47 uniquely named structure cases")
+    if any(case.expected != "formed-visible" for case in cases.PLACEMENTS):
+        raise ValueError("every structure case must expect a formed visible model")
 
     function_root = ROOT / f"datapack/data/{cases.NAMESPACE}/function"
     functions = "\n".join(
         path.read_text(encoding="utf-8")
         for path in sorted(function_root.glob("*.mcfunction"))
     )
-    if len(re.findall(r"^setblock ", functions, re.MULTILINE)) != 1:
-        raise ValueError("placeholder must place exactly one block")
+    if len(re.findall(r"^place template ", functions, re.MULTILINE)) != 47:
+        raise ValueError("gallery must issue one installed-template placement per case")
+    if len(
+        re.findall(
+            rf"^function {re.escape(cases.HELPER_NAMESPACE)}:form$",
+            functions,
+            re.MULTILINE,
+        )
+    ) != 47:
+        raise ValueError("gallery must issue one helper formation request per case")
+    if len(
+        re.findall(
+            rf"^function {re.escape(cases.HELPER_NAMESPACE)}:verify$",
+            functions,
+            re.MULTILINE,
+        )
+    ) != 47:
+        raise ValueError("gallery must issue one helper verification request per case")
+
     lowered = functions.lower()
     for forbidden in ("summon ", "data merge", "op ", "deop ", "stop "):
         if forbidden in lowered:
-            raise ValueError(f"forbidden placeholder command: {forbidden}")
-    print("placeholder gallery lint passed: one bounded stock control")
+            raise ValueError(f"forbidden gallery command: {forbidden}")
+
+    bundled_nbt = tuple(ROOT.rglob("*.nbt"))
+    if bundled_nbt:
+        raise ValueError("gallery must not bundle Immersive Engineering templates")
+    local_ie_data = ROOT / "datapack/data/immersiveengineering"
+    if local_ie_data.exists():
+        raise ValueError("gallery must reference, not copy, installed IE data")
+
+    for case in cases.PLACEMENTS:
+        bounds = case.clear_bounds()
+        volume = (
+            (bounds[3] - bounds[0] + 1)
+            * (bounds[4] - bounds[1] + 1)
+            * (bounds[5] - bounds[2] + 1)
+        )
+        if volume > 32_768:
+            raise ValueError(f"clear command exceeds the fill limit: {case.case_id}")
+
+    print(
+        "formed gallery lint passed: 24 IDs, 14 mirrored variants, "
+        "9 east controls, 47 cases"
+    )
     return 0
 
 

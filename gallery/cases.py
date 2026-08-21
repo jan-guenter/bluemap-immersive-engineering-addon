@@ -1,37 +1,20 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Family-owned placeholder cases for the generated gallery."""
+"""Aggregate the family-owned Immersive Engineering gallery pages."""
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from ie_gallery.model import bounds_union
+from ie_gallery.page2_furnaces import PAGE as PAGE_2
+from ie_gallery.page3_processing import PAGE as PAGE_3
+from ie_gallery.page4_storage import PAGE as PAGE_4
+from ie_gallery.page5_monumental import PAGE as PAGE_5
 
 
 NAMESPACE = "immersiveengineering_gallery"
-ENVELOPE = (174, 99, 173, 178, 103, 177)
+HELPER_NAMESPACE = "immersiveengineering_gallery_helper"
+STORAGE = f"{NAMESPACE}:formation"
 
-
-@dataclass(frozen=True)
-class Placement:
-    case_id: str
-    label: str
-    x: int
-    y: int
-    z: int
-    block_state: str
-    expected: str
-
-
-# SCAFFOLD_NOT_IMPLEMENTED: replace this stock-only row with the smallest
-# observed Immersive Engineering defect fixture plus one or two stock controls.
-PLACEMENTS = (
-    Placement(
-        "stock-control",
-        "stone stock rendering control",
-        176,
-        100,
-        175,
-        "minecraft:stone",
-        "stock-visible",
-    ),
-)
+PAGES = (PAGE_2, PAGE_3, PAGE_4, PAGE_5)
+PLACEMENTS = tuple(case for page in PAGES for case in page.cases)
+ENVELOPE = bounds_union(case.clear_bounds() for case in PLACEMENTS)

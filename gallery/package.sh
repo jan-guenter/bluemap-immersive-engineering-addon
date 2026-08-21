@@ -24,6 +24,7 @@ cleanup() { rm -rf -- "$archive_temp"; }
 trap cleanup EXIT
 
 PYTHONDONTWRITEBYTECODE=1 python3 "$gallery_root/generate.py" --check
+PYTHONDONTWRITEBYTECODE=1 python3 "$gallery_root/test_cases.py"
 PYTHONDONTWRITEBYTECODE=1 python3 "$gallery_root/lint.py"
 (cd "$gallery_root" && sha256sum --check SHA256SUMS)
 
