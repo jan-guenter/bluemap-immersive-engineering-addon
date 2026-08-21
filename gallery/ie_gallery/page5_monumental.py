@@ -11,7 +11,14 @@ from ie_gallery.model import GalleryPage, Structure, variants
 STRUCTURES = (
     Structure("lightning_rod", "lightning_rod", (3, 3, 3), False),
     Structure("bucket_wheel", "bucket_wheel", (7, 7, 1), False),
-    Structure("excavator", "excavator", (3, 3, 6), True),
+    Structure(
+        "excavator",
+        "excavator_full",
+        (3, 7, 8),
+        True,
+        formation_path="excavator",
+        formation_origin_offset=(0, 2, 2),
+    ),
     Structure("radio_tower", "radio_tower", (5, 19, 6), True),
 )
 

@@ -2,9 +2,9 @@
 fill 154 99 538 166 105 550 minecraft:air
 fill 270 99 534 290 109 554 minecraft:air
 fill 302 99 534 322 109 554 minecraft:air
-fill 151 99 655 169 105 673 minecraft:air
-fill 183 99 655 201 105 673 minecraft:air
-fill 215 99 655 233 105 673 minecraft:air
+fill 149 99 653 171 109 675 minecraft:air
+fill 181 99 653 203 109 675 minecraft:air
+fill 213 99 653 235 109 675 minecraft:air
 fill 271 99 655 289 121 673 minecraft:air
 fill 303 99 655 321 121 673 minecraft:air
 fill 335 99 655 353 121 673 minecraft:air

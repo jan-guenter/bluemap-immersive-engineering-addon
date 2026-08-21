@@ -2,30 +2,30 @@
 function immersiveengineering_gallery:clear_page_4
 # p4-silo-north: silo, north-facing normal
 place template immersiveengineering:multiblocks/silo 160 100 416 none none 1.0 0
-data modify storage immersiveengineering_gallery:formation request set value {schema:1,case_id:"p4-silo-north",formed_block:"immersiveengineering:silo",template:"immersiveengineering:multiblocks/silo",origin:[I;160,100,416],facing:"north",mirrored:0b}
+data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-silo-north",formed_block:"immersiveengineering:silo",template:"immersiveengineering:multiblocks/silo",multiblock:"immersiveengineering:multiblocks/silo",origin:[I;160,100,416],formation_origin_offset:[I;0,0,0],facing:"north",mirrored:0b}
 function immersiveengineering_gallery_helper:form
 # p4-shelf-north: shelf, north-facing normal
 place template immersiveengineering:multiblocks/shelf 224 100 416 none none 1.0 0
-data modify storage immersiveengineering_gallery:formation request set value {schema:1,case_id:"p4-shelf-north",formed_block:"immersiveengineering:shelf",template:"immersiveengineering:multiblocks/shelf",origin:[I;224,100,416],facing:"north",mirrored:0b}
+data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-shelf-north",formed_block:"immersiveengineering:shelf",template:"immersiveengineering:multiblocks/shelf",multiblock:"immersiveengineering:multiblocks/shelf",origin:[I;224,100,416],formation_origin_offset:[I;0,0,0],facing:"north",mirrored:0b}
 function immersiveengineering_gallery_helper:form
 # p4-tank-north: tank, north-facing normal
 place template immersiveengineering:multiblocks/sheetmetal_tank 160 100 448 none none 1.0 0
-data modify storage immersiveengineering_gallery:formation request set value {schema:1,case_id:"p4-tank-north",formed_block:"immersiveengineering:tank",template:"immersiveengineering:multiblocks/sheetmetal_tank",origin:[I;160,100,448],facing:"north",mirrored:0b}
+data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-tank-north",formed_block:"immersiveengineering:tank",template:"immersiveengineering:multiblocks/sheetmetal_tank",multiblock:"immersiveengineering:multiblocks/sheetmetal_tank",origin:[I;160,100,448],formation_origin_offset:[I;0,0,0],facing:"north",mirrored:0b}
 function immersiveengineering_gallery_helper:form
 # p4-tank-east-control: tank, east-facing orientation control
 place template immersiveengineering:multiblocks/sheetmetal_tank 180 100 448 clockwise_90 none 1.0 0
-data modify storage immersiveengineering_gallery:formation request set value {schema:1,case_id:"p4-tank-east-control",formed_block:"immersiveengineering:tank",template:"immersiveengineering:multiblocks/sheetmetal_tank",origin:[I;180,100,448],facing:"east",mirrored:0b}
+data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-tank-east-control",formed_block:"immersiveengineering:tank",template:"immersiveengineering:multiblocks/sheetmetal_tank",multiblock:"immersiveengineering:multiblocks/sheetmetal_tank",origin:[I;180,100,448],formation_origin_offset:[I;0,0,0],facing:"east",mirrored:0b}
 function immersiveengineering_gallery_helper:form
 # p4-chunk-loader-north: chunk loader, north-facing normal
 place template immersiveengineering:multiblocks/chunk_loader 224 100 448 none none 1.0 0
-data modify storage immersiveengineering_gallery:formation request set value {schema:1,case_id:"p4-chunk-loader-north",formed_block:"immersiveengineering:chunk_loader",template:"immersiveengineering:multiblocks/chunk_loader",origin:[I;224,100,448],facing:"north",mirrored:0b}
+data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-chunk-loader-north",formed_block:"immersiveengineering:chunk_loader",template:"immersiveengineering:multiblocks/chunk_loader",multiblock:"immersiveengineering:multiblocks/chunk_loader",origin:[I;224,100,448],formation_origin_offset:[I;0,0,0],facing:"north",mirrored:0b}
 function immersiveengineering_gallery_helper:form
 # p4-chunk-loader-north-mirrored: chunk loader, north-facing mirrored
 place template immersiveengineering:multiblocks/chunk_loader 244 100 448 none front_back 1.0 0
-data modify storage immersiveengineering_gallery:formation request set value {schema:1,case_id:"p4-chunk-loader-north-mirrored",formed_block:"immersiveengineering:chunk_loader",template:"immersiveengineering:multiblocks/chunk_loader",origin:[I;244,100,448],facing:"north",mirrored:1b}
+data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-chunk-loader-north-mirrored",formed_block:"immersiveengineering:chunk_loader",template:"immersiveengineering:multiblocks/chunk_loader",multiblock:"immersiveengineering:multiblocks/chunk_loader",origin:[I;244,100,448],formation_origin_offset:[I;0,0,0],facing:"north",mirrored:1b}
 function immersiveengineering_gallery_helper:form
 # p4-chunk-loader-east-control: chunk loader, east-facing orientation control
 place template immersiveengineering:multiblocks/chunk_loader 264 100 448 clockwise_90 none 1.0 0
-data modify storage immersiveengineering_gallery:formation request set value {schema:1,case_id:"p4-chunk-loader-east-control",formed_block:"immersiveengineering:chunk_loader",template:"immersiveengineering:multiblocks/chunk_loader",origin:[I;264,100,448],facing:"east",mirrored:0b}
+data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-chunk-loader-east-control",formed_block:"immersiveengineering:chunk_loader",template:"immersiveengineering:multiblocks/chunk_loader",multiblock:"immersiveengineering:multiblocks/chunk_loader",origin:[I;264,100,448],formation_origin_offset:[I;0,0,0],facing:"east",mirrored:0b}
 function immersiveengineering_gallery_helper:form
 function immersiveengineering_gallery:verify_page_4

@@ -75,7 +75,16 @@ EAST_CONTROL_IDS = frozenset(
 TEMPLATE_PATHS = {
     "advanced_blast_furnace": "improved_blast_furnace",
     "arc_furnace": "arcfurnace",
+    "excavator": "excavator_full",
     "tank": "sheetmetal_tank",
+}
+
+FORMATION_PATHS = {
+    "excavator": "excavator",
+}
+
+FORMATION_ORIGIN_OFFSETS = {
+    "excavator": (0, 2, 2),
 }
 
 
@@ -134,6 +143,24 @@ class GalleryContractTest(unittest.TestCase):
             if case.structure.template_path != case.structure.formed_id
         }
         self.assertEqual(TEMPLATE_PATHS, actual)
+
+    def test_formation_path_exceptions_are_explicit(self):
+        normal = (case for case in cases.PLACEMENTS if case.role == "normal")
+        actual = {
+            case.structure.formed_id: case.structure.formation_path
+            for case in normal
+            if case.structure.formation_path is not None
+        }
+        self.assertEqual(FORMATION_PATHS, actual)
+
+    def test_formation_origin_exceptions_are_explicit(self):
+        normal = (case for case in cases.PLACEMENTS if case.role == "normal")
+        actual = {
+            case.structure.formed_id: case.structure.formation_origin_offset
+            for case in normal
+            if case.structure.formation_origin_offset != (0, 0, 0)
+        }
+        self.assertEqual(FORMATION_ORIGIN_OFFSETS, actual)
 
 
 if __name__ == "__main__":

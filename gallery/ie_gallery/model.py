@@ -19,6 +19,8 @@ class Structure:
     template_path: str
     size: tuple[int, int, int]
     mirrorable: bool
+    formation_path: str | None = None
+    formation_origin_offset: tuple[int, int, int] = (0, 0, 0)
 
     @property
     def block_id(self) -> str:
@@ -27,6 +29,11 @@ class Structure:
     @property
     def template_id(self) -> str:
         return f"immersiveengineering:multiblocks/{self.template_path}"
+
+    @property
+    def multiblock_id(self) -> str:
+        path = self.formation_path or self.template_path
+        return f"immersiveengineering:multiblocks/{path}"
 
 
 @dataclass(frozen=True)

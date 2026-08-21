@@ -28,7 +28,7 @@ def json_bytes(value: object) -> bytes:
 def placements_tsv() -> bytes:
     lines = [
         "case_id\tpage\tlabel\tx\ty\tz\tformed_block\ttemplate\t"
-        "facing\tmirrored\texpected"
+        "multiblock\tfacing\tmirrored\texpected"
     ]
     lines.extend(
         "\t".join(
@@ -41,6 +41,7 @@ def placements_tsv() -> bytes:
                 str(case.z),
                 case.structure.block_id,
                 case.structure.template_id,
+                case.structure.multiblock_id,
                 case.facing,
                 str(case.mirrored).lower(),
                 case.expected,
@@ -53,12 +54,15 @@ def placements_tsv() -> bytes:
 
 def request_value(case: GalleryCase) -> str:
     mirrored = "1b" if case.mirrored else "0b"
+    offset_x, offset_y, offset_z = case.structure.formation_origin_offset
     return (
-        "{schema:1,"
+        "{schema:2,"
         f'case_id:"{case.case_id}",'
         f'formed_block:"{case.structure.block_id}",'
         f'template:"{case.structure.template_id}",'
+        f'multiblock:"{case.structure.multiblock_id}",'
         f"origin:[I;{case.x},{case.y},{case.z}],"
+        f"formation_origin_offset:[I;{offset_x},{offset_y},{offset_z}],"
         f'facing:"{case.facing}",mirrored:{mirrored}'
         "}"
     )

@@ -1,48 +1,48 @@
-case_id	page	label	x	y	z	formed_block	template	facing	mirrored	expected
-p2-coke-oven-north	2	coke oven, north-facing normal	160	100	160	immersiveengineering:coke_oven	immersiveengineering:multiblocks/coke_oven	north	false	formed-visible
-p2-coke-oven-east-control	2	coke oven, east-facing orientation control	180	100	160	immersiveengineering:coke_oven	immersiveengineering:multiblocks/coke_oven	east	false	formed-visible
-p2-blast-furnace-north	2	blast furnace, north-facing normal	208	100	160	immersiveengineering:blast_furnace	immersiveengineering:multiblocks/blast_furnace	north	false	formed-visible
-p2-advanced-blast-furnace-north	2	advanced blast furnace, north-facing normal	256	100	160	immersiveengineering:advanced_blast_furnace	immersiveengineering:multiblocks/improved_blast_furnace	north	false	formed-visible
-p2-alloy-smelter-north	2	alloy smelter, north-facing normal	304	100	160	immersiveengineering:alloy_smelter	immersiveengineering:multiblocks/alloy_smelter	north	false	formed-visible
-p3-crusher-north	3	crusher, north-facing normal	160	100	256	immersiveengineering:crusher	immersiveengineering:multiblocks/crusher	north	false	formed-visible
-p3-crusher-north-mirrored	3	crusher, north-facing mirrored	180	100	256	immersiveengineering:crusher	immersiveengineering:multiblocks/crusher	north	true	formed-visible
-p3-crusher-east-control	3	crusher, east-facing orientation control	200	100	256	immersiveengineering:crusher	immersiveengineering:multiblocks/crusher	east	false	formed-visible
-p3-fermenter-north	3	fermenter, north-facing normal	232	100	256	immersiveengineering:fermenter	immersiveengineering:multiblocks/fermenter	north	false	formed-visible
-p3-fermenter-north-mirrored	3	fermenter, north-facing mirrored	252	100	256	immersiveengineering:fermenter	immersiveengineering:multiblocks/fermenter	north	true	formed-visible
-p3-diesel-generator-north	3	diesel generator, north-facing normal	304	100	256	immersiveengineering:diesel_generator	immersiveengineering:multiblocks/diesel_generator	north	false	formed-visible
-p3-diesel-generator-north-mirrored	3	diesel generator, north-facing mirrored	324	100	256	immersiveengineering:diesel_generator	immersiveengineering:multiblocks/diesel_generator	north	true	formed-visible
-p3-metal-press-north	3	metal press, north-facing normal	160	100	288	immersiveengineering:metal_press	immersiveengineering:multiblocks/metal_press	north	false	formed-visible
-p3-metal-press-north-mirrored	3	metal press, north-facing mirrored	180	100	288	immersiveengineering:metal_press	immersiveengineering:multiblocks/metal_press	north	true	formed-visible
-p3-assembler-north	3	assembler, north-facing normal	232	100	288	immersiveengineering:assembler	immersiveengineering:multiblocks/assembler	north	false	formed-visible
-p3-assembler-east-control	3	assembler, east-facing orientation control	252	100	288	immersiveengineering:assembler	immersiveengineering:multiblocks/assembler	east	false	formed-visible
-p3-auto-workbench-north	3	auto workbench, north-facing normal	304	100	288	immersiveengineering:auto_workbench	immersiveengineering:multiblocks/auto_workbench	north	false	formed-visible
-p3-auto-workbench-north-mirrored	3	auto workbench, north-facing mirrored	324	100	288	immersiveengineering:auto_workbench	immersiveengineering:multiblocks/auto_workbench	north	true	formed-visible
-p3-bottling-machine-north	3	bottling machine, north-facing normal	160	100	320	immersiveengineering:bottling_machine	immersiveengineering:multiblocks/bottling_machine	north	false	formed-visible
-p3-bottling-machine-north-mirrored	3	bottling machine, north-facing mirrored	180	100	320	immersiveengineering:bottling_machine	immersiveengineering:multiblocks/bottling_machine	north	true	formed-visible
-p3-mixer-north	3	mixer, north-facing normal	232	100	320	immersiveengineering:mixer	immersiveengineering:multiblocks/mixer	north	false	formed-visible
-p3-mixer-north-mirrored	3	mixer, north-facing mirrored	252	100	320	immersiveengineering:mixer	immersiveengineering:multiblocks/mixer	north	true	formed-visible
-p3-refinery-north	3	refinery, north-facing normal	304	100	320	immersiveengineering:refinery	immersiveengineering:multiblocks/refinery	north	false	formed-visible
-p3-refinery-north-mirrored	3	refinery, north-facing mirrored	324	100	320	immersiveengineering:refinery	immersiveengineering:multiblocks/refinery	north	true	formed-visible
-p3-squeezer-north	3	squeezer, north-facing normal	160	100	352	immersiveengineering:squeezer	immersiveengineering:multiblocks/squeezer	north	false	formed-visible
-p3-squeezer-north-mirrored	3	squeezer, north-facing mirrored	180	100	352	immersiveengineering:squeezer	immersiveengineering:multiblocks/squeezer	north	true	formed-visible
-p3-sawmill-north	3	sawmill, north-facing normal	232	100	352	immersiveengineering:sawmill	immersiveengineering:multiblocks/sawmill	north	false	formed-visible
-p3-sawmill-north-mirrored	3	sawmill, north-facing mirrored	252	100	352	immersiveengineering:sawmill	immersiveengineering:multiblocks/sawmill	north	true	formed-visible
-p3-arc-furnace-north	3	arc furnace, north-facing normal	304	100	352	immersiveengineering:arc_furnace	immersiveengineering:multiblocks/arcfurnace	north	false	formed-visible
-p3-arc-furnace-north-mirrored	3	arc furnace, north-facing mirrored	324	100	352	immersiveengineering:arc_furnace	immersiveengineering:multiblocks/arcfurnace	north	true	formed-visible
-p3-arc-furnace-east-control	3	arc furnace, east-facing orientation control	344	100	352	immersiveengineering:arc_furnace	immersiveengineering:multiblocks/arcfurnace	east	false	formed-visible
-p4-silo-north	4	silo, north-facing normal	160	100	416	immersiveengineering:silo	immersiveengineering:multiblocks/silo	north	false	formed-visible
-p4-shelf-north	4	shelf, north-facing normal	224	100	416	immersiveengineering:shelf	immersiveengineering:multiblocks/shelf	north	false	formed-visible
-p4-tank-north	4	tank, north-facing normal	160	100	448	immersiveengineering:tank	immersiveengineering:multiblocks/sheetmetal_tank	north	false	formed-visible
-p4-tank-east-control	4	tank, east-facing orientation control	180	100	448	immersiveengineering:tank	immersiveengineering:multiblocks/sheetmetal_tank	east	false	formed-visible
-p4-chunk-loader-north	4	chunk loader, north-facing normal	224	100	448	immersiveengineering:chunk_loader	immersiveengineering:multiblocks/chunk_loader	north	false	formed-visible
-p4-chunk-loader-north-mirrored	4	chunk loader, north-facing mirrored	244	100	448	immersiveengineering:chunk_loader	immersiveengineering:multiblocks/chunk_loader	north	true	formed-visible
-p4-chunk-loader-east-control	4	chunk loader, east-facing orientation control	264	100	448	immersiveengineering:chunk_loader	immersiveengineering:multiblocks/chunk_loader	east	false	formed-visible
-p5-lightning-rod-north	5	lightning rod, north-facing normal	160	100	544	immersiveengineering:lightning_rod	immersiveengineering:multiblocks/lightning_rod	north	false	formed-visible
-p5-bucket-wheel-north	5	bucket wheel, north-facing normal	280	100	544	immersiveengineering:bucket_wheel	immersiveengineering:multiblocks/bucket_wheel	north	false	formed-visible
-p5-bucket-wheel-east-control	5	bucket wheel, east-facing orientation control	312	100	544	immersiveengineering:bucket_wheel	immersiveengineering:multiblocks/bucket_wheel	east	false	formed-visible
-p5-excavator-north	5	excavator, north-facing normal	160	100	664	immersiveengineering:excavator	immersiveengineering:multiblocks/excavator	north	false	formed-visible
-p5-excavator-north-mirrored	5	excavator, north-facing mirrored	192	100	664	immersiveengineering:excavator	immersiveengineering:multiblocks/excavator	north	true	formed-visible
-p5-excavator-east-control	5	excavator, east-facing orientation control	224	100	664	immersiveengineering:excavator	immersiveengineering:multiblocks/excavator	east	false	formed-visible
-p5-radio-tower-north	5	radio tower, north-facing normal	280	100	664	immersiveengineering:radio_tower	immersiveengineering:multiblocks/radio_tower	north	false	formed-visible
-p5-radio-tower-north-mirrored	5	radio tower, north-facing mirrored	312	100	664	immersiveengineering:radio_tower	immersiveengineering:multiblocks/radio_tower	north	true	formed-visible
-p5-radio-tower-east-control	5	radio tower, east-facing orientation control	344	100	664	immersiveengineering:radio_tower	immersiveengineering:multiblocks/radio_tower	east	false	formed-visible
+case_id	page	label	x	y	z	formed_block	template	multiblock	facing	mirrored	expected
+p2-coke-oven-north	2	coke oven, north-facing normal	160	100	160	immersiveengineering:coke_oven	immersiveengineering:multiblocks/coke_oven	immersiveengineering:multiblocks/coke_oven	north	false	formed-visible
+p2-coke-oven-east-control	2	coke oven, east-facing orientation control	180	100	160	immersiveengineering:coke_oven	immersiveengineering:multiblocks/coke_oven	immersiveengineering:multiblocks/coke_oven	east	false	formed-visible
+p2-blast-furnace-north	2	blast furnace, north-facing normal	208	100	160	immersiveengineering:blast_furnace	immersiveengineering:multiblocks/blast_furnace	immersiveengineering:multiblocks/blast_furnace	north	false	formed-visible
+p2-advanced-blast-furnace-north	2	advanced blast furnace, north-facing normal	256	100	160	immersiveengineering:advanced_blast_furnace	immersiveengineering:multiblocks/improved_blast_furnace	immersiveengineering:multiblocks/improved_blast_furnace	north	false	formed-visible
+p2-alloy-smelter-north	2	alloy smelter, north-facing normal	304	100	160	immersiveengineering:alloy_smelter	immersiveengineering:multiblocks/alloy_smelter	immersiveengineering:multiblocks/alloy_smelter	north	false	formed-visible
+p3-crusher-north	3	crusher, north-facing normal	160	100	256	immersiveengineering:crusher	immersiveengineering:multiblocks/crusher	immersiveengineering:multiblocks/crusher	north	false	formed-visible
+p3-crusher-north-mirrored	3	crusher, north-facing mirrored	180	100	256	immersiveengineering:crusher	immersiveengineering:multiblocks/crusher	immersiveengineering:multiblocks/crusher	north	true	formed-visible
+p3-crusher-east-control	3	crusher, east-facing orientation control	200	100	256	immersiveengineering:crusher	immersiveengineering:multiblocks/crusher	immersiveengineering:multiblocks/crusher	east	false	formed-visible
+p3-fermenter-north	3	fermenter, north-facing normal	232	100	256	immersiveengineering:fermenter	immersiveengineering:multiblocks/fermenter	immersiveengineering:multiblocks/fermenter	north	false	formed-visible
+p3-fermenter-north-mirrored	3	fermenter, north-facing mirrored	252	100	256	immersiveengineering:fermenter	immersiveengineering:multiblocks/fermenter	immersiveengineering:multiblocks/fermenter	north	true	formed-visible
+p3-diesel-generator-north	3	diesel generator, north-facing normal	304	100	256	immersiveengineering:diesel_generator	immersiveengineering:multiblocks/diesel_generator	immersiveengineering:multiblocks/diesel_generator	north	false	formed-visible
+p3-diesel-generator-north-mirrored	3	diesel generator, north-facing mirrored	324	100	256	immersiveengineering:diesel_generator	immersiveengineering:multiblocks/diesel_generator	immersiveengineering:multiblocks/diesel_generator	north	true	formed-visible
+p3-metal-press-north	3	metal press, north-facing normal	160	100	288	immersiveengineering:metal_press	immersiveengineering:multiblocks/metal_press	immersiveengineering:multiblocks/metal_press	north	false	formed-visible
+p3-metal-press-north-mirrored	3	metal press, north-facing mirrored	180	100	288	immersiveengineering:metal_press	immersiveengineering:multiblocks/metal_press	immersiveengineering:multiblocks/metal_press	north	true	formed-visible
+p3-assembler-north	3	assembler, north-facing normal	232	100	288	immersiveengineering:assembler	immersiveengineering:multiblocks/assembler	immersiveengineering:multiblocks/assembler	north	false	formed-visible
+p3-assembler-east-control	3	assembler, east-facing orientation control	252	100	288	immersiveengineering:assembler	immersiveengineering:multiblocks/assembler	immersiveengineering:multiblocks/assembler	east	false	formed-visible
+p3-auto-workbench-north	3	auto workbench, north-facing normal	304	100	288	immersiveengineering:auto_workbench	immersiveengineering:multiblocks/auto_workbench	immersiveengineering:multiblocks/auto_workbench	north	false	formed-visible
+p3-auto-workbench-north-mirrored	3	auto workbench, north-facing mirrored	324	100	288	immersiveengineering:auto_workbench	immersiveengineering:multiblocks/auto_workbench	immersiveengineering:multiblocks/auto_workbench	north	true	formed-visible
+p3-bottling-machine-north	3	bottling machine, north-facing normal	160	100	320	immersiveengineering:bottling_machine	immersiveengineering:multiblocks/bottling_machine	immersiveengineering:multiblocks/bottling_machine	north	false	formed-visible
+p3-bottling-machine-north-mirrored	3	bottling machine, north-facing mirrored	180	100	320	immersiveengineering:bottling_machine	immersiveengineering:multiblocks/bottling_machine	immersiveengineering:multiblocks/bottling_machine	north	true	formed-visible
+p3-mixer-north	3	mixer, north-facing normal	232	100	320	immersiveengineering:mixer	immersiveengineering:multiblocks/mixer	immersiveengineering:multiblocks/mixer	north	false	formed-visible
+p3-mixer-north-mirrored	3	mixer, north-facing mirrored	252	100	320	immersiveengineering:mixer	immersiveengineering:multiblocks/mixer	immersiveengineering:multiblocks/mixer	north	true	formed-visible
+p3-refinery-north	3	refinery, north-facing normal	304	100	320	immersiveengineering:refinery	immersiveengineering:multiblocks/refinery	immersiveengineering:multiblocks/refinery	north	false	formed-visible
+p3-refinery-north-mirrored	3	refinery, north-facing mirrored	324	100	320	immersiveengineering:refinery	immersiveengineering:multiblocks/refinery	immersiveengineering:multiblocks/refinery	north	true	formed-visible
+p3-squeezer-north	3	squeezer, north-facing normal	160	100	352	immersiveengineering:squeezer	immersiveengineering:multiblocks/squeezer	immersiveengineering:multiblocks/squeezer	north	false	formed-visible
+p3-squeezer-north-mirrored	3	squeezer, north-facing mirrored	180	100	352	immersiveengineering:squeezer	immersiveengineering:multiblocks/squeezer	immersiveengineering:multiblocks/squeezer	north	true	formed-visible
+p3-sawmill-north	3	sawmill, north-facing normal	232	100	352	immersiveengineering:sawmill	immersiveengineering:multiblocks/sawmill	immersiveengineering:multiblocks/sawmill	north	false	formed-visible
+p3-sawmill-north-mirrored	3	sawmill, north-facing mirrored	252	100	352	immersiveengineering:sawmill	immersiveengineering:multiblocks/sawmill	immersiveengineering:multiblocks/sawmill	north	true	formed-visible
+p3-arc-furnace-north	3	arc furnace, north-facing normal	304	100	352	immersiveengineering:arc_furnace	immersiveengineering:multiblocks/arcfurnace	immersiveengineering:multiblocks/arcfurnace	north	false	formed-visible
+p3-arc-furnace-north-mirrored	3	arc furnace, north-facing mirrored	324	100	352	immersiveengineering:arc_furnace	immersiveengineering:multiblocks/arcfurnace	immersiveengineering:multiblocks/arcfurnace	north	true	formed-visible
+p3-arc-furnace-east-control	3	arc furnace, east-facing orientation control	344	100	352	immersiveengineering:arc_furnace	immersiveengineering:multiblocks/arcfurnace	immersiveengineering:multiblocks/arcfurnace	east	false	formed-visible
+p4-silo-north	4	silo, north-facing normal	160	100	416	immersiveengineering:silo	immersiveengineering:multiblocks/silo	immersiveengineering:multiblocks/silo	north	false	formed-visible
+p4-shelf-north	4	shelf, north-facing normal	224	100	416	immersiveengineering:shelf	immersiveengineering:multiblocks/shelf	immersiveengineering:multiblocks/shelf	north	false	formed-visible
+p4-tank-north	4	tank, north-facing normal	160	100	448	immersiveengineering:tank	immersiveengineering:multiblocks/sheetmetal_tank	immersiveengineering:multiblocks/sheetmetal_tank	north	false	formed-visible
+p4-tank-east-control	4	tank, east-facing orientation control	180	100	448	immersiveengineering:tank	immersiveengineering:multiblocks/sheetmetal_tank	immersiveengineering:multiblocks/sheetmetal_tank	east	false	formed-visible
+p4-chunk-loader-north	4	chunk loader, north-facing normal	224	100	448	immersiveengineering:chunk_loader	immersiveengineering:multiblocks/chunk_loader	immersiveengineering:multiblocks/chunk_loader	north	false	formed-visible
+p4-chunk-loader-north-mirrored	4	chunk loader, north-facing mirrored	244	100	448	immersiveengineering:chunk_loader	immersiveengineering:multiblocks/chunk_loader	immersiveengineering:multiblocks/chunk_loader	north	true	formed-visible
+p4-chunk-loader-east-control	4	chunk loader, east-facing orientation control	264	100	448	immersiveengineering:chunk_loader	immersiveengineering:multiblocks/chunk_loader	immersiveengineering:multiblocks/chunk_loader	east	false	formed-visible
+p5-lightning-rod-north	5	lightning rod, north-facing normal	160	100	544	immersiveengineering:lightning_rod	immersiveengineering:multiblocks/lightning_rod	immersiveengineering:multiblocks/lightning_rod	north	false	formed-visible
+p5-bucket-wheel-north	5	bucket wheel, north-facing normal	280	100	544	immersiveengineering:bucket_wheel	immersiveengineering:multiblocks/bucket_wheel	immersiveengineering:multiblocks/bucket_wheel	north	false	formed-visible
+p5-bucket-wheel-east-control	5	bucket wheel, east-facing orientation control	312	100	544	immersiveengineering:bucket_wheel	immersiveengineering:multiblocks/bucket_wheel	immersiveengineering:multiblocks/bucket_wheel	east	false	formed-visible
+p5-excavator-north	5	excavator, north-facing normal	160	100	664	immersiveengineering:excavator	immersiveengineering:multiblocks/excavator_full	immersiveengineering:multiblocks/excavator	north	false	formed-visible
+p5-excavator-north-mirrored	5	excavator, north-facing mirrored	192	100	664	immersiveengineering:excavator	immersiveengineering:multiblocks/excavator_full	immersiveengineering:multiblocks/excavator	north	true	formed-visible
+p5-excavator-east-control	5	excavator, east-facing orientation control	224	100	664	immersiveengineering:excavator	immersiveengineering:multiblocks/excavator_full	immersiveengineering:multiblocks/excavator	east	false	formed-visible
+p5-radio-tower-north	5	radio tower, north-facing normal	280	100	664	immersiveengineering:radio_tower	immersiveengineering:multiblocks/radio_tower	immersiveengineering:multiblocks/radio_tower	north	false	formed-visible
+p5-radio-tower-north-mirrored	5	radio tower, north-facing mirrored	312	100	664	immersiveengineering:radio_tower	immersiveengineering:multiblocks/radio_tower	immersiveengineering:multiblocks/radio_tower	north	true	formed-visible
+p5-radio-tower-east-control	5	radio tower, east-facing orientation control	344	100	664	immersiveengineering:radio_tower	immersiveengineering:multiblocks/radio_tower	immersiveengineering:multiblocks/radio_tower	east	false	formed-visible
