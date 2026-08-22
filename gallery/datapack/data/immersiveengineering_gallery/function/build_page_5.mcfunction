@@ -36,4 +36,5 @@ function immersiveengineering_gallery_helper:form
 place template immersiveengineering:multiblocks/radio_tower 344 100 664 clockwise_90 none 1.0 0
 data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p5-radio-tower-east-control",formed_block:"immersiveengineering:radio_tower",template:"immersiveengineering:multiblocks/radio_tower",multiblock:"immersiveengineering:multiblocks/radio_tower",origin:[I;344,100,664],formation_origin_offset:[I;0,0,0],facing:"east",mirrored:0b}
 function immersiveengineering_gallery_helper:form
+fill 149 99 534 353 99 675 minecraft:smooth_stone
 function immersiveengineering_gallery:verify_page_5

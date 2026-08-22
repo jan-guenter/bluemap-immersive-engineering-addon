@@ -25,3 +25,4 @@ fill 244 99 344 260 105 360 minecraft:air
 fill 296 99 344 312 107 360 minecraft:air
 fill 316 99 344 332 107 360 minecraft:air
 fill 336 99 344 352 107 360 minecraft:air
+fill 152 99 248 352 99 360 minecraft:air

@@ -6,3 +6,4 @@ fill 174 99 442 186 107 454 minecraft:air
 fill 218 99 442 230 107 454 minecraft:air
 fill 238 99 442 250 107 454 minecraft:air
 fill 258 99 442 270 107 454 minecraft:air
+fill 154 99 409 270 99 454 minecraft:air

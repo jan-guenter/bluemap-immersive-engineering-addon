@@ -104,4 +104,5 @@ function immersiveengineering_gallery_helper:form
 place template immersiveengineering:multiblocks/arcfurnace 344 100 352 clockwise_90 none 1.0 0
 data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p3-arc-furnace-east-control",formed_block:"immersiveengineering:arc_furnace",template:"immersiveengineering:multiblocks/arcfurnace",multiblock:"immersiveengineering:multiblocks/arcfurnace",origin:[I;344,100,352],formation_origin_offset:[I;0,0,0],facing:"east",mirrored:0b}
 function immersiveengineering_gallery_helper:form
+fill 152 99 248 352 99 360 minecraft:smooth_stone
 function immersiveengineering_gallery:verify_page_3

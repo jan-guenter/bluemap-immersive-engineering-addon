@@ -4,3 +4,4 @@ fill 174 99 154 186 105 166 minecraft:air
 fill 202 99 154 214 105 166 minecraft:air
 fill 250 99 154 262 106 166 minecraft:air
 fill 299 99 155 309 104 165 minecraft:air
+fill 154 99 154 309 99 166 minecraft:air

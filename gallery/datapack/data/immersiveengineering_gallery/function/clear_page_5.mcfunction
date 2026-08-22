@@ -8,3 +8,4 @@ fill 213 99 653 235 109 675 minecraft:air
 fill 271 99 655 289 121 673 minecraft:air
 fill 303 99 655 321 121 673 minecraft:air
 fill 335 99 655 353 121 673 minecraft:air
+fill 149 99 534 353 99 675 minecraft:air

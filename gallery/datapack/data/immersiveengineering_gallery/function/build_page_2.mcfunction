@@ -20,4 +20,5 @@ function immersiveengineering_gallery_helper:form
 place template immersiveengineering:multiblocks/alloy_smelter 304 100 160 none none 1.0 0
 data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p2-alloy-smelter-north",formed_block:"immersiveengineering:alloy_smelter",template:"immersiveengineering:multiblocks/alloy_smelter",multiblock:"immersiveengineering:multiblocks/alloy_smelter",origin:[I;304,100,160],formation_origin_offset:[I;0,0,0],facing:"north",mirrored:0b}
 function immersiveengineering_gallery_helper:form
+fill 154 99 154 309 99 166 minecraft:smooth_stone
 function immersiveengineering_gallery:verify_page_2

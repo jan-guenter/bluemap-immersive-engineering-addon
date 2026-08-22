@@ -28,4 +28,5 @@ function immersiveengineering_gallery_helper:form
 place template immersiveengineering:multiblocks/chunk_loader 264 100 448 clockwise_90 none 1.0 0
 data modify storage immersiveengineering_gallery:formation request set value {schema:2,case_id:"p4-chunk-loader-east-control",formed_block:"immersiveengineering:chunk_loader",template:"immersiveengineering:multiblocks/chunk_loader",multiblock:"immersiveengineering:multiblocks/chunk_loader",origin:[I;264,100,448],formation_origin_offset:[I;0,0,0],facing:"east",mirrored:0b}
 function immersiveengineering_gallery_helper:form
+fill 154 99 409 270 99 454 minecraft:smooth_stone
 function immersiveengineering_gallery:verify_page_4
