@@ -1,30 +1,29 @@
 # Releasing
 
-Prototype work is intentionally light. Before owner acceptance, run only the
-focused Java checks, exact candidate verifier, gallery checks, and disposable
-staging comparison needed to get useful visual feedback.
+The owner accepted the staged `0.1.0-alpha.1` renderer. Its scope is 24 formed
+multiblock IDs across 47 cases, 19 OBJ-backed special IDs, 8 special-shape IDs,
+65 special placements, and 8 persisted wire spans. Models use deterministic
+neutral states and stock-safe fallback.
 
-After the owner accepts the candidate:
+Release it as follows:
 
-1. Remove every `SCAFFOLD_NOT_IMPLEMENTED` marker and replace the stock-only
-   gallery case with the accepted bounded fixture.
-2. Freeze the accepted staging JAR's non-manifest entry hashes in
+1. Freeze the accepted staging JAR's non-manifest entry hashes in
    `provenance/accepted-staging-entries.sha256` with the one-time writer in
    `tools/verify_staged_equivalence.py --write`.
-3. Change `addon_version` from the SNAPSHOT to its final version through a PR.
-4. Build production JAR, sources JAR, POM, and Gradle module metadata with the
+2. Change `addon_version` from the snapshot to `0.1.0-alpha.1` through a PR.
+3. Build the production JAR, sources JAR, POM, and Gradle module metadata with the
    exact promotion Java/Gradle/BlueMap inputs.
-5. Put their exact sizes and SHA-256 values in `gradle.properties` and complete
+4. Put their exact sizes and SHA-256 values in `gradle.properties` and complete
    `provenance/release.json`.
-6. Run `verifyReleaseCandidate -PreleaseTag=v<version>` with all exact candidate
-   JAR Gradle properties.
-7. Merge the reviewed commit, create an annotated `v<version>` tag at that
+5. Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.1` with the exact IE
+   JAR Gradle property.
+6. Merge the reviewed commit, create an annotated `v0.1.0-alpha.1` tag at that
    commit, and let `.github/workflows/release.yml` publish.
-8. Compare every downloaded release asset to the locally accepted bytes.
-9. Update the private root portfolio, queue, and `workspace.json` in a separate
+7. Compare every downloaded release asset to the locally accepted bytes.
+8. Update the private root portfolio, queue, and `workspace.json` in a separate
    orchestration commit.
 
-The tag must exactly equal `v<addon_version>`. No release authorizes production
+The tag must equal `v0.1.0-alpha.1`. No release authorizes production
 deployment.
 
 The command sequence and required release-provenance fields are recorded in

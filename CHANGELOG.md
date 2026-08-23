@@ -1,7 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.1.0-alpha.1 - 2026-08-23
 
-- Generated a fail-closed Java 21 BlueMap add-on seed for `immersiveengineering-12.4.2-194`.
-- SCAFFOLD_NOT_IMPLEMENTED: renderer implementation and visual acceptance
-  remain pending.
+- Render 24 formed Immersive Engineering multiblock IDs from their installed
+  OBJ resources, covering the accepted 47-case gallery.
+- Render the accepted installed-model and special-shape blocks, including
+  conveyors, feedthroughs and fluid pipes.
+- Render persisted Immersive Engineering wire spans as static catenaries.
+- Keep unsupported artifacts, states and malformed data on bounded stock
+  fallback paths.

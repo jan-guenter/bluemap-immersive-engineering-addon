@@ -32,6 +32,7 @@ public final class WavefrontParser {
         List<Vec3> positions = new ArrayList<>();
         List<Vec2> uvs = new ArrayList<>();
         List<Triangle> triangles = new ArrayList<>();
+        List<PendingFace> faces = new ArrayList<>();
         String material = null;
         int lineCount = 0;
         try (BufferedReader reader = reader(raw)) {
@@ -59,12 +60,17 @@ public final class WavefrontParser {
                         require(tokens, 2, "material");
                         material = tokens[1];
                     }
-                    case "f" -> addFace(tokens, material, positions, uvs, triangles);
+                    case "f" -> faces.add(new PendingFace(
+                            tokens, material, positions.size(), uvs.size()
+                    ));
                     default -> {
                         // Groups, normals, libraries and smoothing are not needed.
                     }
                 }
             }
+        }
+        for (PendingFace face : faces) {
+            addFace(face, positions, uvs, triangles);
         }
         if (triangles.isEmpty()) {
             throw new IOException("OBJ contains no textured triangles");
@@ -74,6 +80,14 @@ public final class WavefrontParser {
 
     /** Maps each MTL material to its installed texture resource location. */
     public static Map<String, String> parseMaterials(byte[] raw) throws IOException {
+        return parseMaterials(raw, Map.of());
+    }
+
+    /** Maps MTL materials, resolving OBJ-loader {@code #texture} aliases. */
+    public static Map<String, String> parseMaterials(
+            byte[] raw,
+            Map<String, String> textureAliases
+    ) throws IOException {
         Map<String, String> result = new LinkedHashMap<>();
         String current = null;
         int lineCount = 0;
@@ -88,6 +102,12 @@ public final class WavefrontParser {
                     current = line.substring(7).trim();
                 } else if (line.startsWith("map_Kd ") && current != null) {
                     String texture = line.substring(7).trim();
+                    if (texture.startsWith("#")) {
+                        texture = textureAliases.get(texture.substring(1));
+                    }
+                    if (texture == null) {
+                        throw new IOException("unresolved MTL texture alias");
+                    }
                     if (!texture.matches("[a-z0-9_.-]+:[a-z0-9_./-]+")) {
                         throw new IOException("invalid MTL texture location");
                     }
@@ -104,18 +124,22 @@ public final class WavefrontParser {
     }
 
     private static void addFace(
-            String[] tokens,
-            String material,
+            PendingFace face,
             List<Vec3> positions,
             List<Vec2> uvs,
             List<Triangle> triangles
     ) throws IOException {
+        String[] tokens = face.tokens();
+        String material = face.material();
         if (material == null || tokens.length < 4) {
             throw new IOException("OBJ face missing material or vertices");
         }
         List<Vertex> polygon = new ArrayList<>(tokens.length - 1);
         for (int index = 1; index < tokens.length; index++) {
-            polygon.add(vertex(tokens[index], positions, uvs));
+            polygon.add(vertex(
+                    tokens[index], positions, uvs,
+                    face.positionsSeen(), face.uvsSeen()
+            ));
         }
         for (int index = 1; index + 1 < polygon.size(); index++) {
             if (triangles.size() >= MAX_TRIANGLES) {
@@ -127,21 +151,29 @@ public final class WavefrontParser {
         }
     }
 
-    private static Vertex vertex(String token, List<Vec3> positions, List<Vec2> uvs)
+    private static Vertex vertex(
+            String token,
+            List<Vec3> positions,
+            List<Vec2> uvs,
+            int positionsSeen,
+            int uvsSeen
+    )
             throws IOException {
         String[] indices = token.split("/", -1);
         if (indices.length < 2 || indices[0].isEmpty() || indices[1].isEmpty()) {
             throw new IOException("OBJ face lacks position or UV index");
         }
-        Vec3 position = positions.get(resolveIndex(indices[0], positions.size()));
-        Vec2 uv = uvs.get(resolveIndex(indices[1], uvs.size()));
+        Vec3 position = positions.get(resolveIndex(
+                indices[0], positionsSeen, positions.size()
+        ));
+        Vec2 uv = uvs.get(resolveIndex(indices[1], uvsSeen, uvs.size()));
         return new Vertex(position.x(), position.y(), position.z(), uv.u(), uv.v());
     }
 
-    private static int resolveIndex(String token, int size) throws IOException {
+    private static int resolveIndex(String token, int seen, int size) throws IOException {
         try {
             int raw = Integer.parseInt(token);
-            int index = raw > 0 ? raw - 1 : size + raw;
+            int index = raw > 0 ? raw - 1 : seen + raw;
             if (index < 0 || index >= size) {
                 throw new IOException("OBJ index out of range");
             }
@@ -177,5 +209,16 @@ public final class WavefrontParser {
     }
 
     private record Vec2(float u, float v) {
+    }
+
+    private record PendingFace(
+            String[] tokens,
+            String material,
+            int positionsSeen,
+            int uvsSeen
+    ) {
+        private PendingFace {
+            tokens = tokens.clone();
+        }
     }
 }

@@ -1,8 +1,7 @@
 # Agent guide for the Immersive Engineering BlueMap add-on
 
-This is an independent public add-on repository generated from the private
-All the Mons orchestration scaffold. Read this file and `README.md` before
-changing it.
+This is an independent public add-on repository coordinated from the private
+All the Mons workspace. Read this file and `README.md` before changing it.
 
 ## Exact baseline
 
@@ -21,34 +20,41 @@ Mixins, or world state.
 ## Development contract
 
 - Preserve stock rendering while the runtime/profile is absent, duplicated,
-  unsupported, malformed, disabled, or not yet implemented.
+  unsupported, malformed, or disabled.
 - Keep the BlueMap internal API behind `adapter/bluemap522`.
 - Keep exact candidate identities and resource contracts in the profile.
 - Keep state/NBT decoding, normalized data, and mesh emission separate.
 - Unknown family data gets one bounded diagnostic and stock fallback.
 - Use installed resources only after exact-artifact admission.
 - Gallery cases and renderer facts are family-owned; do not move them back to
-  the generic scaffold.
+  the shared template.
 
-`SCAFFOLD_NOT_IMPLEMENTED` is permitted only during the fast prototype phase.
-The release gate rejects it.
+The accepted `0.1.0-alpha.1` scope is 24 formed multiblock IDs across 47 cases,
+19 installed OBJ-backed specials, 8 special-shape IDs, 65 special placements,
+and 8 persisted wire spans. Render formed machines and OBJ specials in a
+deterministic neutral state. Do not infer inventories, fill levels, activity,
+particles, or animation phase.
 
 ## Commands
 
-Compile and test the safe seed:
+Run the quick Java, Checkstyle, and archive gate:
 
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport clean check build
 ```
 
-Verify a prototype with exact candidate JAR properties:
+Run the full exact-profile development gate with Gradle `9.6.1` and Java `21`:
 
-- `-PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar`
+```bash
+gradle --no-daemon \
+  -PbluemapSourcePath=../bluemap-backport \
+  -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
+  clean prototypeCheck build
+```
 
-Pass those properties to Gradle and run `prototypeCheck`. Run
-`verifyReleaseCandidate -PreleaseTag=v<version>` only after owner visual
-acceptance and release sealing. Follow `docs/EXECUTION.md` for the reusable
-prototype, acceptance, promotion and publication sequence.
+Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.1` only after sealing
+the owner-accepted staging entries and final artifacts. Follow
+`docs/EXECUTION.md` for the exact promotion and publication sequence.
 
 Never stage or commit generated build output, candidate JARs, galleries, worlds,
 credentials, logs, or research evidence.
