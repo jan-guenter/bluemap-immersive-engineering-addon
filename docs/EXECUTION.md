@@ -1,12 +1,13 @@
 # Add-on execution
 
-This repository starts inactive and stock-safe. Implement only the smallest
-observed Immersive Engineering rendering defect before staging.
+The accepted renderer covers the exact Immersive Engineering `12.4.2-194`
+profile. It reads installed models and textures after exact JAR verification
+and falls back to stock BlueMap rendering for unsupported or malformed data.
 
-## Prototype
+## Development gate
 
-Acquire and verify the exact candidate JARs outside Git. Their Gradle
-properties are:
+Acquire the exact candidate JAR outside Git. Use Gradle `9.6.1` and Java `21`.
+The candidate property is:
 
 - `-PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar`
 
@@ -14,13 +15,19 @@ Then run:
 
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport \
-  <exact-candidate-properties> clean prototypeCheck build
+  -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
+  clean prototypeCheck build
 bash gallery/package.sh /tmp/immersiveengineering-gallery.zip
 ```
 
-Deploy that JAR and gallery only to disposable staging, verify the intended
-BlueMap link loads, and compare it with the matching client. Iterate from
-observed defects until the owner explicitly accepts one exact staging JAR.
+`prototypeCheck` runs the unit tests, Checkstyle, production and sources JAR
+audits, exact artifact verification, generated-gallery check, and gallery
+lint. The gallery has 47 formed cases, 65 special placements, and 8 persisted
+wire spans.
+
+Deploy the JAR and gallery only to disposable staging. Open each intended
+BlueMap view before sending its URL to the owner, then compare the render with
+the matching client. The accepted target is `0.1.0-alpha.1`.
 
 ## Acceptance and release
 
@@ -39,17 +46,17 @@ Record `visual_acceptance: true` under `owner_accepted_staging`, and record the
 production JAR, sources JAR, POM and Gradle module file names, sizes and hashes
 under `final_release_artifacts`.
 
-Promote `addon_version` through a pull request, remove every
-`SCAFFOLD_NOT_IMPLEMENTED` marker, and run with all exact candidate properties:
+Promote `addon_version` to `0.1.0-alpha.1` through a pull request and run:
 
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport \
-  <exact-candidate-properties> -PreleaseTag=v<version> \
+  -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
+  -PreleaseTag=v0.1.0-alpha.1 \
   clean build generatePomFileForAddonPublication \
   generateMetadataFileForAddonPublication verifyReleaseCandidate
 ```
 
 Merge only after final-version CI passes this gate. Create an annotated
-`v<version>` tag at reviewed `main`; the release workflow independently checks
-the tag, exact BlueMap checkout, accepted bytes and draft assets before making
-the prerelease public. Publication never deploys to production.
+`v0.1.0-alpha.1` tag at reviewed `main`. The release workflow checks the tag,
+exact BlueMap checkout, accepted bytes, and draft assets before making the
+prerelease public. Publication never deploys to production.

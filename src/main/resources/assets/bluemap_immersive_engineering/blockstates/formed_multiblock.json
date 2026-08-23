@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "renderer": "bluemap_immersive_engineering:formed_multiblock",
+      "model": "bluemap:block/missing"
+    }
+  }
+}
