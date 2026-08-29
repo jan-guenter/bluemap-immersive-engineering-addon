@@ -4,6 +4,15 @@ The accepted renderer covers the exact Immersive Engineering `12.4.2-194`
 profile. It reads installed models and textures after exact JAR verification
 and falls back to stock BlueMap rendering for unsupported or malformed data.
 
+Before running Gradle gates, activate a Python 3.11 or newer virtual
+environment and install the exact development-only toolkit into it:
+
+```bash
+python -m pip install --disable-pip-version-check --no-deps \
+  --require-hashes --only-binary=:all: \
+  --requirement requirements/toolkit.txt
+```
+
 ## Development gate
 
 Acquire the exact candidate JAR outside Git. Use Gradle `9.6.1` and Java `21`.
@@ -35,9 +44,9 @@ Freeze that accepted JAR's functional entries once; the writer refuses to
 overwrite an existing acceptance record:
 
 ```bash
-python tools/verify_staged_equivalence.py \
+bluemap-addon-toolkit jar-entries write \
   --jar /absolute/path/accepted-staging.jar \
-  --entries provenance/accepted-staging-entries.sha256 --write
+  --entries provenance/accepted-staging-entries.sha256
 ```
 
 Record the manifest in `provenance/release.json` as

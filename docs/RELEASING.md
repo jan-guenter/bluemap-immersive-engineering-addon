@@ -9,7 +9,7 @@ Release it as follows:
 
 1. Freeze the accepted staging JAR's non-manifest entry hashes in
    `provenance/accepted-staging-entries.sha256` with the one-time writer in
-   `tools/verify_staged_equivalence.py --write`.
+   `bluemap-addon-toolkit jar-entries write`.
 2. Change `addon_version` from the snapshot to `0.1.0-alpha.1` through a PR.
 3. Build the production JAR, sources JAR, POM, and Gradle module metadata with the
    exact promotion Java/Gradle/BlueMap inputs.
