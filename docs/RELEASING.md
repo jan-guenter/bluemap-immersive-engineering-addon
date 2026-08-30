@@ -7,20 +7,30 @@ neutral states and stock-safe fallback.
 
 Release it as follows:
 
-1. Freeze the accepted staging JAR's non-manifest entry hashes in
+1. Initialize and verify the exact development-only toolkit before Gradle:
+
+   ```bash
+   git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+   python -m pip install --disable-pip-version-check --no-deps \
+     --require-hashes --only-binary=:all: \
+     --requirement requirements/toolkit.txt
+   bluemap-addon-toolkit conventions check .
+   ```
+
+2. Freeze the accepted staging JAR's non-manifest entry hashes in
    `provenance/accepted-staging-entries.sha256` with the one-time writer in
    `bluemap-addon-toolkit jar-entries write`.
-2. Change `addon_version` from the snapshot to `0.1.0-alpha.1` through a PR.
-3. Build the production JAR, sources JAR, POM, and Gradle module metadata with the
+3. Change `addon_version` from the snapshot to `0.1.0-alpha.1` through a PR.
+4. Build the production JAR, sources JAR, POM, and Gradle module metadata with the
    exact promotion Java/Gradle/BlueMap inputs.
-4. Put their exact sizes and SHA-256 values in `gradle.properties` and complete
+5. Put their exact sizes and SHA-256 values in `gradle.properties` and complete
    `provenance/release.json`.
-5. Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.1` with the exact IE
+6. Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.1` with the exact IE
    JAR Gradle property.
-6. Merge the reviewed commit, create an annotated `v0.1.0-alpha.1` tag at that
+7. Merge the reviewed commit, create an annotated `v0.1.0-alpha.1` tag at that
    commit, and let `.github/workflows/release.yml` publish.
-7. Compare every downloaded release asset to the locally accepted bytes.
-8. Update the private root portfolio, queue, and `workspace.json` in a separate
+8. Compare every downloaded release asset to the locally accepted bytes.
+9. Update the private root portfolio, queue, and `workspace.json` in a separate
    orchestration commit.
 
 The tag must equal `v0.1.0-alpha.1`. No release authorizes production

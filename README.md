@@ -17,6 +17,23 @@ does not bundle Immersive Engineering assets or binaries.
 
 ## Build
 
+Clone with `--recurse-submodules`, or initialize an existing checkout with
+`git submodule update --init --recursive -- tooling/bluemap-addon-toolkit`.
+The settings preflight accepts only toolkit commit
+`6cd34a8368cc4ee8628fbe830a90ec5b14960629` and rejects an uninitialized,
+changed, or dirty checkout. Install the corresponding toolkit wheel and check
+the repository contract before Gradle:
+
+```bash
+python -m pip install --disable-pip-version-check --no-deps \
+  --require-hashes --only-binary=:all: \
+  --requirement requirements/toolkit.txt
+bluemap-addon-toolkit conventions check .
+```
+
+The requirement locks the 20,585-byte `v0.3.0-alpha.1` wheel at SHA-256
+`82f1ec53603646849a7c2d4b58f3fb7000413fe83043a302bee88cc88daeb8f7`.
+
 ```bash
 gradle --no-daemon \
   -PbluemapSourcePath=../bluemap-backport \

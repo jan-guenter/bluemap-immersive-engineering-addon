@@ -4,14 +4,28 @@ The accepted renderer covers the exact Immersive Engineering `12.4.2-194`
 profile. It reads installed models and textures after exact JAR verification
 and falls back to stock BlueMap rendering for unsupported or malformed data.
 
-Before running Gradle gates, activate a Python 3.11 or newer virtual
-environment and install the exact development-only toolkit into it:
+Clone with `--recurse-submodules`, or initialize an existing checkout with
+the exact development-only toolkit source:
+
+```bash
+git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+```
+
+The settings preflight accepts only toolkit commit
+`6cd34a8368cc4ee8628fbe830a90ec5b14960629` and rejects an uninitialized,
+changed, or dirty checkout. Before running Gradle gates, activate a Python
+3.11 or newer virtual environment, install the hash-locked toolkit wheel, and
+verify the repository contract:
 
 ```bash
 python -m pip install --disable-pip-version-check --no-deps \
   --require-hashes --only-binary=:all: \
   --requirement requirements/toolkit.txt
+bluemap-addon-toolkit conventions check .
 ```
+
+The requirement locks the 20,585-byte `v0.3.0-alpha.1` wheel at SHA-256
+`82f1ec53603646849a7c2d4b58f3fb7000413fe83043a302bee88cc88daeb8f7`.
 
 ## Development gate
 
