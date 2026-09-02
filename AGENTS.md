@@ -62,7 +62,7 @@ gradle --no-daemon \
   generateMetadataFileForAddonPublication verifyReleaseCandidate
 ```
 
-The unpublished migration candidate is sealed under `candidate_artifacts`.
+The owner-accepted migration candidate is sealed under `candidate_artifacts`.
 Follow
 `docs/EXECUTION.md` for the exact promotion and publication sequence.
 

@@ -429,13 +429,13 @@ tasks.register('verifyReleaseMetadata') {
         def release = new groovy.json.JsonSlurper()
                 .parse(file('provenance/release.json'))
         def expectedRepository = 'https://github.com/jan-guenter/bluemap-immersive-engineering-addon'
-        if (release.status != 'unpublished-migration-candidate'
-                || release.published != false
+        if (release.status != 'owner-accepted-release-candidate'
                 || release.version != project.version.toString()
                 || release.repository != expectedRepository
                 || !(release.candidate_artifacts instanceof Map)
-                || release.candidate_artifacts.isEmpty()) {
-            throw new GradleException('Migration candidate provenance is not sealed')
+                || release.candidate_artifacts.isEmpty()
+                || release.owner_accepted_combined_staging?.visual_acceptance != true) {
+            throw new GradleException('Owner-accepted release provenance is not sealed')
         }
 
         def expectedBlueMap = [

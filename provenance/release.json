@@ -1,7 +1,6 @@
 {
   "schema_version": 1,
-  "status": "unpublished-migration-candidate",
-  "published": false,
+  "status": "owner-accepted-release-candidate",
   "version": "0.1.0-alpha.2",
   "release_date": "2026-09-02",
   "repository": "https://github.com/jan-guenter/bluemap-immersive-engineering-addon",
@@ -28,6 +27,19 @@
     "production_jar_size": 321202,
     "production_jar_sha256": "eec9bbd5b1c27ffa3e9c57d7a730f5a2212ebeebc600cafc7498fa0a15580fb4",
     "visual_acceptance": true
+  },
+  "owner_accepted_combined_staging": {
+    "accepted_at": "2026-09-02",
+    "candidate_source_commit": "58af32555263b9a302d911d4786ec2119d892100",
+    "candidate_manifest_sha256": "37edfde8510131ba513e9c46092552ce524b733307490a2a562bd90f0db8a514",
+    "override_lock_sha256": "90d5b236b36e6c4f92c573591c0fe6fbfa85199cda263e04173241500c26627e",
+    "runtime_report_sha256": "308a321a5ad33b070758e577c24ddef0b1dbeaaec824a000efe49fc195530e59",
+    "gallery_composition_id": "b1af93b9280073770cefba809a44065457e658845c1d8f2051f43432a09890b7",
+    "integration_galleries_passed": 51,
+    "integration_galleries_total": 51,
+    "fresh_tiles_rendered": 589,
+    "visual_acceptance": true,
+    "scope": "The owner accepted the exact alpha.2 Immersive Engineering candidate in the combined final-native ATMons 1.2.0 visual batch."
   },
   "candidate_artifacts": {
     "production_jar": {
@@ -76,6 +88,6 @@
     "exact_input_gate": true,
     "local_gradle_version": "9.6.1",
     "local_java_runtime": "21.0.12.1+1",
-    "exact_alpha_2_runtime_review": false
+    "exact_alpha_2_runtime_review": true
   }
 }
