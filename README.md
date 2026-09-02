@@ -3,8 +3,8 @@
 A Java 21 BlueMap add-on for the exact `immersiveengineering-12.4.2-194` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-Version `0.1.0-alpha.2` is the owner-accepted native BlueMap 5.23 release
-candidate. It preserves the owner-accepted `0.1.0-alpha.1` rendering contract.
+Version `0.1.0-alpha.3` is an unpublished registration-plan migration
+candidate. It preserves the owner-accepted `0.1.0-alpha.2` rendering contract.
 
 The add-on renders a neutral static view of the exact installed IE resources:
 
@@ -52,7 +52,7 @@ generated-gallery check, and the 47-case gallery lint. See
 `provenance/upstreams.json` for the immutable artifact identity and the
 [execution guide](docs/EXECUTION.md) for staging and release commands.
 
-The four pinned Adapter API sources are compiled into the add-on. Its
+The five pinned Adapter API sources are compiled into the add-on. Its
 standalone module JAR is neither installed nor nested.
 
 ## Install
