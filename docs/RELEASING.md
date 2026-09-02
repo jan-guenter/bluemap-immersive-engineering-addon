@@ -1,40 +1,41 @@
 # Releasing
 
-The owner accepted the staged `0.1.0-alpha.1` renderer. Its scope is 24 formed
+The unpublished `0.1.0-alpha.2` migration preserves the accepted 24 formed
 multiblock IDs across 47 cases, 19 OBJ-backed special IDs, 8 special-shape IDs,
-65 special placements, and 8 persisted wire spans. Models use deterministic
-neutral states and stock-safe fallback.
+65 special placements, and 8 persisted wire spans.
 
-Release it as follows:
+After owner acceptance:
 
 1. Initialize and verify the exact development-only toolkit before Gradle:
 
    ```bash
-   git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+   git submodule update --init --recursive -- \
+     tooling/bluemap-addon-toolkit modules/bluemap-addon-adapter-api
    python -m pip install --disable-pip-version-check --no-deps \
      --require-hashes --only-binary=:all: \
      --requirement requirements/toolkit.txt
    bluemap-addon-toolkit conventions check .
    ```
 
-2. Freeze the accepted staging JAR's non-manifest entry hashes in
-   `provenance/accepted-staging-entries.sha256` with the one-time writer in
-   `bluemap-addon-toolkit jar-entries write`.
-3. Change `addon_version` from the snapshot to `0.1.0-alpha.1` through a PR.
-4. Build the production JAR, sources JAR, POM, and Gradle module metadata with the
-   exact promotion Java/Gradle/BlueMap inputs.
-5. Put their exact sizes and SHA-256 values in `gradle.properties` and complete
-   `provenance/release.json`.
-6. Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.1` with the exact IE
+2. Record the accepted combined integration run and set the provenance status
+   to `owner-accepted-release-candidate`.
+3. Require the production JAR, sources JAR, POM, and Gradle module metadata to
+   match the already sealed `candidate_artifacts` bytes.
+4. Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.2` with the exact IE
    JAR Gradle property.
-7. Merge the reviewed commit, create an annotated `v0.1.0-alpha.1` tag at that
+5. Merge the reviewed commit, create an annotated `v0.1.0-alpha.2` tag at that
    commit, and let `.github/workflows/release.yml` publish.
-8. Compare every downloaded release asset to the locally accepted bytes.
-9. Update the private root portfolio, queue, and `workspace.json` in a separate
+6. Compare every downloaded release asset to the locally accepted bytes.
+7. Update the private root portfolio, queue, and `workspace.json` in a separate
    orchestration commit.
 
-The tag must equal `v0.1.0-alpha.1`. No release authorizes production
+The release workflow refuses an unpublished migration status. The tag must
+equal `v0.1.0-alpha.2`. No release authorizes production
 deployment.
 
 The command sequence and required release-provenance fields are recorded in
 [`EXECUTION.md`](EXECUTION.md).
+
+The unpublished candidate uses the aggregate builder's compact `bluemap` and
+`adapter_api` maps. `verifyReleaseMetadata` rejects legacy `host` or
+`bluemap_target` records and any change to those exact maps.

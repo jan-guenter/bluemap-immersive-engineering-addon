@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.2 - 2026-09-02
+
+- Migrated exact runtime admission and the internal adapter to the tested
+  BlueMap 5.23 feature backport.
+- Replaced local compatibility, registry, extension-factory, and synthetic
+  dispatch helpers with the pinned four-source Adapter API module.
+- Preserved all accepted multiblock, OBJ-special, special-shape, coke-oven,
+  and persisted-wire rendering behavior.
+
 ## 0.1.0-alpha.1 - 2026-08-23
 
 - Render 24 formed Immersive Engineering multiblock IDs from their installed
