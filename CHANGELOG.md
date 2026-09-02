@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.0-alpha.3 - 2026-09-02
+
+- Use separate released shared Adapter API plans for base and block-entity
+  registrations without changing ordering, failure reasons, or rendering.
+
 ## 0.1.0-alpha.2 - 2026-09-02
 
 - Migrated exact runtime admission and the internal adapter to the tested

@@ -1,6 +1,6 @@
 # Releasing
 
-The unpublished `0.1.0-alpha.2` migration preserves the accepted 24 formed
+The unpublished `0.1.0-alpha.3` migration preserves the accepted 24 formed
 multiblock IDs across 47 cases, 19 OBJ-backed special IDs, 8 special-shape IDs,
 65 special placements, and 8 persisted wire spans.
 
@@ -21,16 +21,16 @@ After owner acceptance:
    to `owner-accepted-release-candidate`.
 3. Require the production JAR, sources JAR, POM, and Gradle module metadata to
    match the already sealed `candidate_artifacts` bytes.
-4. Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.2` with the exact IE
+4. Run `verifyReleaseCandidate -PreleaseTag=v0.1.0-alpha.3` with the exact IE
    JAR Gradle property.
-5. Merge the reviewed commit, create an annotated `v0.1.0-alpha.2` tag at that
+5. Merge the reviewed commit, create an annotated `v0.1.0-alpha.3` tag at that
    commit, and let `.github/workflows/release.yml` publish.
 6. Compare every downloaded release asset to the locally accepted bytes.
 7. Update the private root portfolio, queue, and `workspace.json` in a separate
    orchestration commit.
 
 The release workflow refuses an unpublished migration status. The tag must
-equal `v0.1.0-alpha.2`. No release authorizes production
+equal `v0.1.0-alpha.3`. No release authorizes production
 deployment.
 
 The command sequence and required release-provenance fields are recorded in

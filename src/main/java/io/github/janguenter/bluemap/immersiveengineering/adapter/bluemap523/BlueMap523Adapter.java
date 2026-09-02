@@ -9,7 +9,7 @@ import de.bluecolored.bluemap.core.map.hires.block.BlockRendererType;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
 import de.bluecolored.bluemap.core.util.Key;
 import de.bluecolored.bluemap.core.world.mca.blockentity.BlockEntityType;
-import io.github.janguenter.bluemap.addon.adapter.api.bluemap523.RegistryGuard;
+import io.github.janguenter.bluemap.addon.adapter.api.bluemap523.RegistrationPlan;
 import io.github.janguenter.bluemap.addon.adapter.api.bluemap523.ResourceExtensionType;
 import io.github.janguenter.bluemap.immersiveengineering.activation.AddonRuntime;
 
@@ -38,33 +38,29 @@ public final class BlueMap523Adapter {
                     pack -> new ProfileResourceExtension(pack, RUNTIME)
             );
     private static final List<BlockEntityType> BLOCK_ENTITIES = blockEntityTypes();
+    private static final RegistrationPlan BASE_REGISTRATIONS = RegistrationPlan.empty()
+            .add(BlockRendererType.REGISTRY, RENDERER)
+            .add(BlockRendererType.REGISTRY, SPECIAL_RENDERER)
+            .add(RenderPassType.REGISTRY, WIRE_RENDER_PASS)
+            .add(ResourcePack.Extension.REGISTRY, EXTENSION);
+    private static final RegistrationPlan BLOCK_ENTITY_REGISTRATIONS = blockEntityPlan();
 
     private BlueMap523Adapter() {
     }
 
     /** Registers exact admission, formed multiblock routing, and audited DTOs. */
     public static synchronized boolean install() {
-        if (!RegistryGuard.canRegister(BlockRendererType.REGISTRY, RENDERER)
-                || !RegistryGuard.canRegister(BlockRendererType.REGISTRY, SPECIAL_RENDERER)
-                || !RegistryGuard.canRegister(RenderPassType.REGISTRY, WIRE_RENDER_PASS)
-                || !RegistryGuard.canRegister(ResourcePack.Extension.REGISTRY, EXTENSION)
-                || BLOCK_ENTITIES.stream().anyMatch(type ->
-                !RegistryGuard.canRegister(BlockEntityType.REGISTRY, type))) {
+        if (!BASE_REGISTRATIONS.canApply() || !BLOCK_ENTITY_REGISTRATIONS.canApply()) {
             RUNTIME.fail("registry-collision");
             return false;
         }
-        if (!RegistryGuard.register(BlockRendererType.REGISTRY, RENDERER)
-                || !RegistryGuard.register(BlockRendererType.REGISTRY, SPECIAL_RENDERER)
-                || !RegistryGuard.register(RenderPassType.REGISTRY, WIRE_RENDER_PASS)
-                || !RegistryGuard.register(ResourcePack.Extension.REGISTRY, EXTENSION)) {
+        if (!BASE_REGISTRATIONS.apply()) {
             RUNTIME.fail("registry-registration-failed");
             return false;
         }
-        for (BlockEntityType type : BLOCK_ENTITIES) {
-            if (!RegistryGuard.register(BlockEntityType.REGISTRY, type)) {
-                RUNTIME.fail("block-entity-registry-collision");
-                return false;
-            }
+        if (!BLOCK_ENTITY_REGISTRATIONS.apply()) {
+            RUNTIME.fail("block-entity-registry-collision");
+            return false;
         }
         return true;
     }
@@ -81,5 +77,13 @@ public final class BlueMap523Adapter {
         ));
         result.addAll(SpecialShapeIntegration.blockEntityTypes());
         return List.copyOf(result);
+    }
+
+    private static RegistrationPlan blockEntityPlan() {
+        RegistrationPlan plan = RegistrationPlan.empty();
+        for (BlockEntityType type : BLOCK_ENTITIES) {
+            plan = plan.add(BlockEntityType.REGISTRY, type);
+        }
+        return plan;
     }
 }

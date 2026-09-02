@@ -25,11 +25,11 @@
     "version": "5.22-feature.backport-5.23-stateless-java-web-server-46"
   },
   "adapter_api": {
-    "version": "0.1.0-alpha.2",
-    "commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
-    "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "version": "0.1.0-alpha.3",
+    "commit": "2f8bb7aa3d907f837ebda45c019e0498ed7e89af",
+    "source_tree": "c0b5db049f6a7630ea589c7f2e658133ed8e2983",
     "license": "MIT",
-    "use": "four exact source-compiled helpers; standalone JAR not bundled or installed",
+    "use": "five exact source-compiled helpers from the verified alpha.3 release; standalone JAR not bundled or installed",
     "redistributed": true
   },
   "pack": {

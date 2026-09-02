@@ -11,9 +11,9 @@ All the Mons workspace. Read this file and `README.md` before changing it.
 - Java `21`
 - BlueMap `5.22-feature.backport-5.23-stateless-java-web-server-46`, commit `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`
 - BlueMap API commit `285c9a60eff3ac2b0cab308ce1058d1565be0971`
-- Adapter API `0.1.0-alpha.2`, commit
-  `e81f08bc4bfbf02d810ec8949a019130e2e61634`, source tree
-  `2f974c9bb2ba13888d69682f86f30f58922d30eb`
+- Adapter API `0.1.0-alpha.3`, commit
+  `2f8bb7aa3d907f837ebda45c019e0498ed7e89af`, source tree
+  `c0b5db049f6a7630ea589c7f2e658133ed8e2983`
 - Exact profile `immersiveengineering-12.4.2-194`
 
 This is a standalone BlueMap add-on, not a NeoForge mod. Do not add client
@@ -25,7 +25,7 @@ Mixins, or world state.
 - Preserve stock rendering while the runtime/profile is absent, duplicated,
   unsupported, malformed, or disabled.
 - Keep the BlueMap internal API behind `adapter/bluemap523`.
-- Compile exactly the four pinned Adapter API helpers as source. Never install,
+- Compile exactly the five pinned Adapter API helpers as source. Never install,
   bundle, or nest its standalone module JAR.
 - Keep exact candidate identities and resource contracts in the profile.
 - Keep state/NBT decoding, normalized data, and mesh emission separate.
@@ -57,7 +57,7 @@ Run the full exact-profile development gate with Gradle `9.6.1` and Java `21`:
 gradle --no-daemon \
   -PbluemapSourcePath=/path/to/BlueMap-at-7e07f4e7 \
   -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
-  -PreleaseTag=v0.1.0-alpha.2 clean prototypeCheck build \
+  -PreleaseTag=v0.1.0-alpha.3 clean prototypeCheck build \
   generatePomFileForAddonPublication \
   generateMetadataFileForAddonPublication verifyReleaseCandidate
 ```

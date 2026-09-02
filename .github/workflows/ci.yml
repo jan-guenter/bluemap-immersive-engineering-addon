@@ -92,12 +92,14 @@ jobs:
         id: version
         run: |
           version="$(sed -n 's/^addon_version=//p' gradle.properties)"
+          status="$(sed -n 's/^  \"status\": \"\([^\"]*\)\",$/\1/p' provenance/release.json)"
           test -n "${version}"
+          test -n "${status}"
           echo "version=${version}" >> "${GITHUB_OUTPUT}"
-          if [[ "${version}" == *-SNAPSHOT ]]; then
-            echo "release_candidate=false" >> "${GITHUB_OUTPUT}"
-          else
+          if [[ "${version}" != *-SNAPSHOT && "${status}" == "owner-accepted-release-candidate" ]]; then
             echo "release_candidate=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "release_candidate=false" >> "${GITHUB_OUTPUT}"
           fi
 
       - name: Verify prototype

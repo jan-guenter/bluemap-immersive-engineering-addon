@@ -116,12 +116,16 @@ def sharedAdapterApiPackage =
 def sharedAdapterApiClasses = [
         'BlueMapRuntimeCompatibility.class',
         'RegistryGuard.class',
+        'RegistrationPlan.class',
+        'RegistrationPlan$Registration.class',
+        'RegistrationPlan$TypedRegistration.class',
         'ResourceExtensionType.class',
         'SyntheticDispatch.class'
 ].collect { sharedAdapterApiPackage + it }
 def sharedAdapterApiSources = [
         'BlueMapRuntimeCompatibility.java',
         'RegistryGuard.java',
+        'RegistrationPlan.java',
         'ResourceExtensionType.java',
         'SyntheticDispatch.java'
 ].collect { sharedAdapterApiPackage + it }
@@ -444,10 +448,10 @@ tasks.register('verifyReleaseMetadata') {
                 api_commit: '285c9a60eff3ac2b0cab308ce1058d1565be0971'
         ]
         def expectedAdapterApi = [
-                version: '0.1.0-alpha.2',
-                commit: 'e81f08bc4bfbf02d810ec8949a019130e2e61634',
-                source_tree: '2f974c9bb2ba13888d69682f86f30f58922d30eb',
-                source_files_compiled: 4,
+                version: '0.1.0-alpha.3',
+                commit: '2f8bb7aa3d907f837ebda45c019e0498ed7e89af',
+                source_tree: 'c0b5db049f6a7630ea589c7f2e658133ed8e2983',
+                source_files_compiled: 5,
                 module_jar_installed: false,
                 module_jar_bundled: false,
                 module_jar_nested: false,
