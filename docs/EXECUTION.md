@@ -4,16 +4,15 @@ The accepted renderer covers the exact Immersive Engineering `12.4.2-194`
 profile. It reads installed models and textures after exact JAR verification
 and falls back to stock BlueMap rendering for unsupported or malformed data.
 
-Clone with `--recurse-submodules`, or initialize an existing checkout with
-the exact development-only toolkit source:
+Clone with `--recurse-submodules`, or initialize both exact source submodules:
 
 ```bash
-git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-adapter-api
 ```
 
-The settings preflight accepts only toolkit commit
-`6cd34a8368cc4ee8628fbe830a90ec5b14960629` and rejects an uninitialized,
-changed, or dirty checkout. Before running Gradle gates, activate a Python
+The settings preflight rejects uninitialized, changed, dirty, or mismatched
+toolkit and Adapter API checkouts. Before running Gradle gates, activate a Python
 3.11 or newer virtual environment, install the hash-locked toolkit wheel, and
 verify the repository contract:
 
@@ -37,7 +36,7 @@ The candidate property is:
 Then run:
 
 ```bash
-gradle --no-daemon -PbluemapSourcePath=../bluemap-backport \
+gradle --no-daemon -PbluemapSourcePath=/path/to/BlueMap-at-7e07f4e7 \
   -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
   clean prototypeCheck build
 bash gallery/package.sh /tmp/immersiveengineering-gallery.zip
@@ -50,36 +49,26 @@ wire spans.
 
 Deploy the JAR and gallery only to disposable staging. Open each intended
 BlueMap view before sending its URL to the owner, then compare the render with
-the matching client. The accepted target is `0.1.0-alpha.1`.
+the matching client. The migration target is `0.1.0-alpha.2`.
 
 ## Acceptance and release
 
-Freeze that accepted JAR's functional entries once; the writer refuses to
-overwrite an existing acceptance record:
+The migration candidate records the production JAR, sources JAR, POM, and
+Gradle module identities under `candidate_artifacts`. After visual acceptance,
+change the provenance status to `owner-accepted-release-candidate` and record
+the accepted combined integration run without changing those artifact bytes.
+
+Run the exact candidate gate through a pull request:
 
 ```bash
-bluemap-addon-toolkit jar-entries write \
-  --jar /absolute/path/accepted-staging.jar \
-  --entries provenance/accepted-staging-entries.sha256
-```
-
-Record the manifest in `provenance/release.json` as
-`accepted_staging_entries` with exact `path`, `entry_count`, and `sha256`.
-Record `visual_acceptance: true` under `owner_accepted_staging`, and record the
-production JAR, sources JAR, POM and Gradle module file names, sizes and hashes
-under `final_release_artifacts`.
-
-Promote `addon_version` to `0.1.0-alpha.1` through a pull request and run:
-
-```bash
-gradle --no-daemon -PbluemapSourcePath=../bluemap-backport \
+gradle --no-daemon -PbluemapSourcePath=/path/to/BlueMap-at-7e07f4e7 \
   -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
-  -PreleaseTag=v0.1.0-alpha.1 \
+  -PreleaseTag=v0.1.0-alpha.2 \
   clean build generatePomFileForAddonPublication \
   generateMetadataFileForAddonPublication verifyReleaseCandidate
 ```
 
-Merge only after final-version CI passes this gate. Create an annotated
-`v0.1.0-alpha.1` tag at reviewed `main`. The release workflow checks the tag,
+Merge only after owner acceptance and final-head CI passes this gate. Create an
+annotated `v0.1.0-alpha.2` tag at reviewed `main`. The release workflow checks the tag,
 exact BlueMap checkout, accepted bytes, and draft assets before making the
 prerelease public. Publication never deploys to production.

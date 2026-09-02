@@ -1,66 +1,61 @@
 {
   "schema_version": 1,
-  "status": "owner-accepted-release-candidate",
-  "version": "0.1.0-alpha.1",
-  "release_date": "2026-08-23",
+  "status": "unpublished-migration-candidate",
+  "published": false,
+  "version": "0.1.0-alpha.2",
+  "release_date": "2026-09-02",
   "repository": "https://github.com/jan-guenter/bluemap-immersive-engineering-addon",
-  "tag": "v0.1.0-alpha.1",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-immersive-engineering-addon:0.1.0-alpha.1",
-  "owner_accepted_staging": {
-    "commit": "f449942bcb5430aa805faa5e26adba03def97152",
-    "tree": "070da35ff67acfab145da2e5911845687c63b96c",
-    "production_jar_size": 321203,
-    "production_jar_sha256": "51c32cb9ff755630050f2788b6b316065b3e3d6e12b7ea4374677fea9763bd98",
-    "accepted_at": "2026-08-23",
-    "visual_acceptance": true,
-    "gallery_archive_size": 10927,
-    "gallery_archive_sha256": "81f519133f0fb481984b41bd3db778573a2aa67eb8dbe8bc052c4ea36449e5e1",
-    "formed_cases": 47,
-    "special_placements": 65,
-    "wire_spans": 8
+  "tag": "v0.1.0-alpha.2",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-immersive-engineering-addon:0.1.0-alpha.2",
+  "bluemap_target": {
+    "version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971"
   },
-  "accepted_staging_entries": {
-    "path": "provenance/accepted-staging-entries.sha256",
-    "entry_count": 86,
-    "sha256": "fd48df46277fdb4433d7641ed341bcf7d718c0394d30c517ab42c0f6f7c7bbe2"
+  "adapter_api": {
+    "version": "0.1.0-alpha.2",
+    "commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "compiled_as_source": true,
+    "standalone_jar_bundled": false
   },
-  "final_release_artifacts": {
+  "previous_owner_accepted_release": {
+    "version": "0.1.0-alpha.1",
+    "tag": "v0.1.0-alpha.1",
+    "production_jar_size": 321202,
+    "production_jar_sha256": "eec9bbd5b1c27ffa3e9c57d7a730f5a2212ebeebc600cafc7498fa0a15580fb4",
+    "visual_acceptance": true
+  },
+  "candidate_artifacts": {
     "production_jar": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.1.jar",
-      "size": 321202,
-      "sha256": "eec9bbd5b1c27ffa3e9c57d7a730f5a2212ebeebc600cafc7498fa0a15580fb4"
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.jar",
+      "size": 0,
+      "sha256": "PENDING"
     },
     "sources_jar": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.1-sources.jar",
-      "size": 181013,
-      "sha256": "d3b88f65d9f292f03ef2aa99a06ec16a1e541c58b04fa41cf85c274de654be8f"
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2-sources.jar",
+      "size": 0,
+      "sha256": "PENDING"
     },
     "pom": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.1.pom",
-      "size": 1401,
-      "sha256": "1d497453dc2419e7bc3079ff0a2d39787f1bad22bddffd9a3ade2a8e6b893949"
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.pom",
+      "size": 0,
+      "sha256": "PENDING"
     },
     "gradle_module": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.1.module.json",
-      "size": 2918,
-      "sha256": "06c5b87cc73c7977b9a17cd556f0edd45ddac57f430106b3136697abd42cbd59"
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.module.json",
+      "size": 0,
+      "sha256": "PENDING"
     }
   },
-  "staged_equivalence": {
-    "entry_manifest": "provenance/accepted-staging-entries.sha256",
-    "identical_non_manifest_entries": 86,
-    "whole_jar_byte_identical": false,
-    "only_changed_entry_bytes": "META-INF/MANIFEST.MF",
-    "change_reason": "Implementation-Version changed from the accepted SNAPSHOT marker to the final release version."
-  },
-  "gallery": {
-    "archive_file_name": "bluemap-immersiveengineering-gallery.zip",
-    "size": 10927,
-    "sha256": "81f519133f0fb481984b41bd3db778573a2aa67eb8dbe8bc052c4ea36449e5e1",
-    "formed_cases": 47,
+  "preserved_contract": {
+    "formed_multiblock_ids": 24,
+    "formed_gallery_cases": 47,
+    "obj_backed_special_ids": 19,
+    "special_shape_ids": 8,
     "special_placements": 65,
     "wire_spans": 8,
-    "published_as_release_asset": false
+    "matches_alpha_1_owner_accepted_gallery": true
   },
   "ephemeral_ci_inputs": {
     "immersiveengineering": {
@@ -75,7 +70,9 @@
     "production_jar_exact_byte_gate": true,
     "sources_jar_exact_byte_gate": true,
     "publication_metadata_exact_byte_gate": true,
-    "gallery_archive_exact_byte_gate": true,
-    "exact_input_gate": true
+    "exact_input_gate": true,
+    "local_gradle_version": "9.6.1",
+    "local_java_runtime": "21.0.12.1+1",
+    "exact_alpha_2_runtime_review": false
   }
 }
