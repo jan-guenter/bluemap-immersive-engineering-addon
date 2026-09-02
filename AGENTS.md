@@ -57,7 +57,7 @@ Run the full exact-profile development gate with Gradle `9.6.1` and Java `21`:
 gradle --no-daemon \
   -PbluemapSourcePath=/path/to/BlueMap-at-7e07f4e7 \
   -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
-  -PreleaseTag=v0.1.0-alpha.2 clean prototypeCheck build \
+  -PreleaseTag=v0.1.0-alpha.3 clean prototypeCheck build \
   generatePomFileForAddonPublication \
   generateMetadataFileForAddonPublication verifyReleaseCandidate
 ```

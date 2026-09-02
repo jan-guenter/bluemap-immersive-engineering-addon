@@ -44,24 +44,24 @@
   },
   "candidate_artifacts": {
     "production_jar": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.jar",
-      "size": 324308,
-      "sha256": "16a3416565323ef18e829d8f3b9338af2f5e68cadec5dc18f51d0059c9c41f9f"
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.3.jar",
+      "size": 331550,
+      "sha256": "81037cbbcc384d99c3bef0fbc01594a7092f06a1768020218baba8e88b1747c2"
     },
     "sources_jar": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2-sources.jar",
-      "size": 184259,
-      "sha256": "cd03da7aa07f7ea5b26e2bd9a7261da7a49181c060e20d8133e340e104277269"
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.3-sources.jar",
+      "size": 186832,
+      "sha256": "198378b102e3fb7b2b14f178fed0c035822d2f6014debde22c62e665bf5ceb5e"
     },
     "pom": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.pom",
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.3.pom",
       "size": 1401,
-      "sha256": "1ed6a430c2bd0d4bf22f81da14a455f0a4a870f29a824ff8092cecf1d4d50d6e"
+      "sha256": "2d4fdf58d658bb6bc8190d585f8eb4a6194cbb2a102f8e7e0e38e7eda9612c65"
     },
     "gradle_module": {
-      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.module.json",
+      "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.3.module.json",
       "size": 2918,
-      "sha256": "e2af7ddb9b1ce47ddf68047c5596b5641bc66e2a4aa074646dbaeb1e4ce2ff1f"
+      "sha256": "c1ddeb8da8e5c7f91f5c7c87cbeb9ec326e5c39c427d31546312c7ba41819a3c"
     }
   },
   "preserved_contract": {

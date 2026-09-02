@@ -16,7 +16,8 @@ class RegistrationPlanContractTest {
     @Test
     void preservesPlanSeparationRegistrationOrderAndFailurePolicy() throws Exception {
         String source = Files.readString(Path.of(
-                "src/main/java/io/github/janguenter/bluemap/immersiveengineering/adapter/bluemap523/BlueMap523Adapter.java"
+                "src/main/java/io/github/janguenter/bluemap/immersiveengineering/"
+                        + "adapter/bluemap523/BlueMap523Adapter.java"
         ));
         int renderer = source.indexOf(".add(BlockRendererType.REGISTRY, RENDERER)");
         int special = source.indexOf(".add(BlockRendererType.REGISTRY, SPECIAL_RENDERER)");

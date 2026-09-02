@@ -49,7 +49,7 @@ wire spans.
 
 Deploy the JAR and gallery only to disposable staging. Open each intended
 BlueMap view before sending its URL to the owner, then compare the render with
-the matching client. The migration target is `0.1.0-alpha.2`.
+the matching client. The migration target is `0.1.0-alpha.3`.
 
 ## Acceptance and release
 
@@ -63,12 +63,12 @@ Run the exact candidate gate through a pull request:
 ```bash
 gradle --no-daemon -PbluemapSourcePath=/path/to/BlueMap-at-7e07f4e7 \
   -PimmersiveEngineeringJar=/path/to/ImmersiveEngineering-1.21.1-12.4.2-194.jar \
-  -PreleaseTag=v0.1.0-alpha.2 \
+  -PreleaseTag=v0.1.0-alpha.3 \
   clean build generatePomFileForAddonPublication \
   generateMetadataFileForAddonPublication verifyReleaseCandidate
 ```
 
 Merge only after owner acceptance and final-head CI passes this gate. Create an
-annotated `v0.1.0-alpha.2` tag at reviewed `main`. The release workflow checks the tag,
+annotated `v0.1.0-alpha.3` tag at reviewed `main`. The release workflow checks the tag,
 exact BlueMap checkout, accepted bytes, and draft assets before making the
 prerelease public. Publication never deploys to production.
