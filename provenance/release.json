@@ -29,23 +29,23 @@
   "candidate_artifacts": {
     "production_jar": {
       "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 324308,
+      "sha256": "16a3416565323ef18e829d8f3b9338af2f5e68cadec5dc18f51d0059c9c41f9f"
     },
     "sources_jar": {
       "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2-sources.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 184259,
+      "sha256": "cd03da7aa07f7ea5b26e2bd9a7261da7a49181c060e20d8133e340e104277269"
     },
     "pom": {
       "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.pom",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 1401,
+      "sha256": "1ed6a430c2bd0d4bf22f81da14a455f0a4a870f29a824ff8092cecf1d4d50d6e"
     },
     "gradle_module": {
       "file_name": "bluemap-immersive-engineering-addon-0.1.0-alpha.2.module.json",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 2918,
+      "sha256": "e2af7ddb9b1ce47ddf68047c5596b5641bc66e2a4aa074646dbaeb1e4ce2ff1f"
     }
   },
   "preserved_contract": {
