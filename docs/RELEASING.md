@@ -35,3 +35,7 @@ deployment.
 
 The command sequence and required release-provenance fields are recorded in
 [`EXECUTION.md`](EXECUTION.md).
+
+The unpublished candidate uses the aggregate builder's compact `bluemap` and
+`adapter_api` maps. `verifyReleaseMetadata` rejects legacy `host` or
+`bluemap_target` records and any change to those exact maps.
